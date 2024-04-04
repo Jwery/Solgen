@@ -13,6 +13,10 @@ import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { AvatarModule } from 'primeng/avatar';
 import { AvatarGroupModule } from 'primeng/avatargroup';
+import { IconFieldModule } from 'primeng/iconfield';
+import { InputIconModule } from 'primeng/inputicon';
+import { ChartModule } from 'primeng/chart';
+
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
     BrowserModule,
     AppRoutingModule,
     AvatarModule,
-    AvatarGroupModule
+    AvatarGroupModule,
+    IconFieldModule,
+    InputIconModule,
+    ChartModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
