@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
-import { GraphicComponent } from './components/graphic/graphic.component';
 import { FormComponent } from './components/form/form.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
@@ -16,6 +15,11 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { ChartModule } from 'primeng/chart';
+import { GraphicComponent} from './components/graphic/graphic.component';
+import { DragdropComponent } from './components/dragdrop/dragdrop.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ToastModule } from 'primeng/toast';
+
 
 
 
@@ -23,13 +27,14 @@ import { ChartModule } from 'primeng/chart';
   declarations: [
     AppComponent,
     ConnexionComponent,
-    GraphicComponent,
     FormComponent,
     DashboardComponent,
     InscriptionComponent,
     SettingsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    GraphicComponent,
+    DragdropComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,10 @@ import { ChartModule } from 'primeng/chart';
     AvatarGroupModule,
     IconFieldModule,
     InputIconModule,
-    ChartModule
+    ChartModule,
+    FileUploadModule,
+    ToastModule
+
 
   ],
   providers: [],

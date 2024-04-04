@@ -6,6 +6,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 
+
 const routes: Routes = [
   { path:'', redirectTo:'dashboard',pathMatch:'full' },
   { path:'connexion', component:ConnexionComponent },
