@@ -1,0 +1,39 @@
+
+$color-blue: #1F223A;
+$color-orange: #F77503;
+$color-lightgrey: #F5F5F5;
+$color-darkgrey: #545454;
+@import "primeicons/primeicons.css";
+
+.start{
+    display: flex;
+    flex-direction: row;
+}
+.center{
+    display: flex;
+    flex-direction: row;
+}
+.end{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $color-blue;
+    width: 100%;
+    height: 15vh;
+    padding: 20px;
+}
+.logo{
+    margin:auto;
+}
+
+.pi{
+    color:$color-lightgrey;
+}
