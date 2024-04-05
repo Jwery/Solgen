@@ -3,21 +3,28 @@ $color-orange: #F77503;
 $color-lightgrey: #ededed;
 $color-darkgrey: #282828;
 @import "primeicons/primeicons.css";
+*{
+    display: block;
+    justify-content: center ;
+}
 .main{
     display:flex;
     flex-direction: row;
+    flex-wrap: wrap;        
     height: 70%;
-    padding: 0auto;
+    width:100vw;
+    margin: auto;
     
 }
 .table{
-    width: 25vw;
-    min-width: 600px;
+    width: 35vw;
+    min-width: 300px;
     height:100%;
     background-color:$color-lightgrey ;
     border-radius: 24px;
     margin:10px;
+    padding: 16px
 }
 .graphe{
-    width:100%;
+    width:60vw;
 }
