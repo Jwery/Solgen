@@ -13,7 +13,6 @@ const routes: Routes = [
   { path:'dashboard', component:DashboardComponent },
   { path:'inscription', component:InscriptionComponent },
   { path:'settings', component:SettingsComponent },
-
   
   ];
 

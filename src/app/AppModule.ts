@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
@@ -15,10 +14,13 @@ import { AvatarGroupModule } from 'primeng/avatargroup';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { ChartModule } from 'primeng/chart';
-import { GraphicComponent} from './components/graphic/graphic.component';
+import { GraphicComponent } from './components/graphic/graphic.component';
 import { DragdropComponent } from './components/dragdrop/dragdrop.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
+import { TableModule } from 'primeng/table';
+import { TableComponent } from './components/table/table.component';
+
 
 
 
@@ -35,6 +37,7 @@ import { ToastModule } from 'primeng/toast';
     FooterComponent,
     GraphicComponent,
     DragdropComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -45,11 +48,11 @@ import { ToastModule } from 'primeng/toast';
     InputIconModule,
     ChartModule,
     FileUploadModule,
-    ToastModule
-
-
+    ToastModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

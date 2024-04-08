@@ -5,19 +5,24 @@ $color-darkgrey: #282828;
 @import "primeicons/primeicons.css";
 *{
     display: block;
-    justify-content: center ;
+}
+.left{
+    display:flex;
+    flex-direction:column;
+    align-content: stretch;
+
 }
 .main{
     display:flex;
     flex-direction: row;
+    margin: auto;
     flex-wrap: wrap;        
     height: 70%;
-    width:80vw;    
 }
 .table{
-    width: 35vw;
+    width: 100%;
     min-width: 300px;
-    height:100%;
+    height:fit-content;
     background-color:$color-lightgrey ;
     border-radius: 24px;
     margin:10px;
@@ -26,7 +31,8 @@ $color-darkgrey: #282828;
 }
 .graphe{
     margin-top: 20vh;
-    width:100vw;
+    width:auto;
+    min-width: 300px;
 }
 .p-button{
 background-color : #F77503;
