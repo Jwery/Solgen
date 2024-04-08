@@ -20,6 +20,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,6 +39,7 @@ import { TableComponent } from './components/table/table.component';
     GraphicComponent,
     DragdropComponent,
     TableComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { TableComponent } from './components/table/table.component';
     ChartModule,
     FileUploadModule,
     ToastModule,
-    TableModule
+    TableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

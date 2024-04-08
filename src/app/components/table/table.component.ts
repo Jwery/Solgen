@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { Product } from '../../../domain/product';
-import { ProductService } from '../../../service/productservice';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,13 +8,12 @@ import { ProductService } from '../../../service/productservice';
   styleUrl: './table.component.scss'
 })
 export class TableComponent  {
-  products!: Product[];
+  url: string = '../../assets/fakedb.json'
+  fakedb:any;
 
-  constructor(private ProductService: ProductService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-      this.ProductService.getProductsMini().then((data) => {
-          this.products = data;
-      });
+    this.http.get(this.url).subscribe(res => {this.fakedb = res;})
+      };
   }
-}

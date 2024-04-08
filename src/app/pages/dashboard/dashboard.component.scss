@@ -19,6 +19,16 @@ $color-darkgrey: #282828;
     flex-wrap: wrap;        
     height: 70%;
 }
+.tabledash{
+    width: 100%;
+    min-width: 300px;
+    height:fit-content;
+    background-color:$color-lightgrey ;
+    border-radius: 24px;
+    margin:10px;
+    padding: 16px
+
+}
 .table{
     width: 100%;
     min-width: 300px;
