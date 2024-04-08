@@ -12,9 +12,7 @@ $color-darkgrey: #282828;
     flex-direction: row;
     flex-wrap: wrap;        
     height: 70%;
-    width:100vw;
-    margin: auto;
-    
+    width:80vw;    
 }
 .table{
     width: 35vw;
@@ -23,8 +21,14 @@ $color-darkgrey: #282828;
     background-color:$color-lightgrey ;
     border-radius: 24px;
     margin:10px;
+    margin-top: 20vh;
     padding: 16px
 }
 .graphe{
-    width:60vw;
+    margin-top: 20vh;
+    width:100vw;
+}
+.p-button{
+background-color : #F77503;
+border:#F77503;
 }

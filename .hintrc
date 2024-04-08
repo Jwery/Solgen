@@ -8,9 +8,32 @@
       "default",
       {
         "ignore": [
-          "backdrop-filter"
+          "backdrop-filter",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer",
+          "@layer"
         ]
       }
     ]
-  }
+  },
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_chr <= 122",
+    "not chrome <= 122",
+    "not edge <= 122",
+    "not opera <= 106",
+    "not samsung <= 23",
+    "not and_chr <= 122",
+    "not chrome <= 122",
+    "not edge <= 122",
+    "not opera <= 106",
+    "not samsung <= 23"
+  ]
 }

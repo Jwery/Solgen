@@ -5,6 +5,7 @@ $color-lightgrey: #F5F5F5;
 $color-darkgrey: #545454;
 @import "primeicons/primeicons.css";
 
+
 .start{
     display: flex;
     flex-direction: row;
@@ -29,8 +30,10 @@ $color-darkgrey: #545454;
     width: 100%;
     height: 15vh;
     padding: 20px;
-    left:0;
+    position: fixed;
     top:0;
+    left:0;
+    z-index:1;
 }
 .logo{
     margin:auto;
@@ -40,7 +43,6 @@ $color-darkgrey: #545454;
     color:$color-lightgrey;
 }
 .search_field{
-    width:50vw;
     height: 2rem;
     border-radius: 8px;
     background: rgba(220, 220, 220, 0.22);
@@ -49,6 +51,7 @@ $color-darkgrey: #545454;
     -webkit-backdrop-filter: blur(9.8px);
     backdrop-filter: blur(9.8px);
     border: 1px solid rgba(220, 220, 220, 0.31);
-    padding:1rem
+    width: 100%;
+    padding: 20px;
 }
 
