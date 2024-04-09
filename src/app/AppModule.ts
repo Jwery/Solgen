@@ -21,6 +21,8 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
 
 
 
@@ -38,7 +40,7 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     GraphicComponent,
     DragdropComponent,
-    TableComponent
+    TableComponent,
     
   ],
   imports: [
@@ -52,7 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     FileUploadModule,
     ToastModule,
     TableModule,
-    HttpClientModule
+    HttpClientModule,
+    AutoCompleteModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
