@@ -6,7 +6,7 @@ interface City {
 }
 
 @Component({
-  selector: 'app-form',
+  selector: 'dropdown-reactive-forms-demo',
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })

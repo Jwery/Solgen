@@ -22,6 +22,11 @@ import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { ChantierComponent } from './components/form/chantier/chantier.component';
+import { ResponsableComponent } from './components/form/responsable/responsable.component';
+
 
 
 
@@ -41,6 +46,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     GraphicComponent,
     DragdropComponent,
     TableComponent,
+    ChantierComponent,
+    ResponsableComponent
     
   ],
   imports: [
@@ -56,6 +63,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     TableModule,
     HttpClientModule,
     AutoCompleteModule,
+    DropdownModule,
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
