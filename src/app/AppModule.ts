@@ -26,6 +26,9 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { ChantierComponent } from './components/form/chantier/chantier.component';
 import { ResponsableComponent } from './components/form/responsable/responsable.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { NappeComponent } from './components/form/nappe/nappe.component';
+
 
 
 
@@ -47,7 +50,8 @@ import { ResponsableComponent } from './components/form/responsable/responsable.
     DragdropComponent,
     TableComponent,
     ChantierComponent,
-    ResponsableComponent
+    ResponsableComponent,
+    NappeComponent
     
   ],
   imports: [
@@ -65,7 +69,8 @@ import { ResponsableComponent } from './components/form/responsable/responsable.
     AutoCompleteModule,
     DropdownModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]
