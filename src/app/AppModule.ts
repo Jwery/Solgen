@@ -28,6 +28,9 @@ import { ChantierComponent } from './components/form/chantier/chantier.component
 import { ResponsableComponent } from './components/form/responsable/responsable.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { NappeComponent } from './components/form/nappe/nappe.component';
+import { IntervalleComponent } from './components/intervalle/intervalle.component';
+import { DateComponent } from './components/date/date.component';
+import { CalendarModule } from 'primeng/calendar';
 
 
 
@@ -51,7 +54,9 @@ import { NappeComponent } from './components/form/nappe/nappe.component';
     TableComponent,
     ChantierComponent,
     ResponsableComponent,
-    NappeComponent
+    NappeComponent,
+    IntervalleComponent,
+    DateComponent
     
   ],
   imports: [
@@ -70,7 +75,8 @@ import { NappeComponent } from './components/form/nappe/nappe.component';
     DropdownModule,
     BrowserModule,
     FormsModule,
-    InputNumberModule
+    InputNumberModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

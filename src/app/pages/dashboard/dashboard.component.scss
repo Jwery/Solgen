@@ -5,6 +5,7 @@ $color-darkgrey: #282828;
 @import "primeicons/primeicons.css";
 *{
     display: block;
+
 }
 .title{
     margin: 10px;
@@ -98,7 +99,7 @@ $color-darkgrey: #282828;
 }
 .graphe{
     margin-top: 20vh;
-    width: 40vw;
+    width: 50vw;
     min-width: 300px;
     position:fixed;
     right: 0;
