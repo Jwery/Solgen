@@ -76,7 +76,8 @@ import { CalendarModule } from 'primeng/calendar';
     BrowserModule,
     FormsModule,
     InputNumberModule,
-    CalendarModule
+    CalendarModule,
+    DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

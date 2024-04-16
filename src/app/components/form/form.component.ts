@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 interface City {
   name: string;
@@ -14,6 +15,15 @@ export class FormComponent implements OnInit {
   cities: City[] | undefined;
 
   selectedCity: City | undefined;
+
+  public form: FormGroup;
+
+  constructor (fb:FormBuilder){
+    this.form=fb.group({
+      name: 'New York', code: 'NY' 
+    })
+    
+  }
 
   ngOnInit() {
       this.cities = [
