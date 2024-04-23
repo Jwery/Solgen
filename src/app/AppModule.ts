@@ -28,16 +28,7 @@ import { IntervalleComponent } from './components/intervalle/intervalle.componen
 import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { CardModule } from 'primeng/card';
-
-
-
-
-
-
-
-
-
+import { TogglesComponent } from './components/toggles/toggles.component';
 
 @NgModule({
   declarations: [
@@ -52,11 +43,12 @@ import { CardModule } from 'primeng/card';
     DragdropComponent,
     TableComponent,
     IntervalleComponent,
-    DateComponent
+    DateComponent, 
+    TogglesComponent
     
   ],
   imports: [
-    BrowserModule,
+
     AppRoutingModule,
     AvatarModule,
     AvatarGroupModule,
@@ -76,7 +68,8 @@ import { CardModule } from 'primeng/card';
     DropdownModule,
     FloatLabelModule,
     DropdownModule,
-    CardModule
+    FormsModule,
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

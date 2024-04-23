@@ -71,7 +71,7 @@
 
 .table_right {
   width: 100%;
-  min-width: 300px;
+  min-width: 20vw;
   background-color: #ededed;
   border-radius: 24px;
   margin: 10px;
@@ -94,7 +94,7 @@
   background-color: #ededed;
   border-radius: 24px;
   margin: 10px;
-  margin-top: 10px;
+  margin-top: 30vh;
   margin-left: 40px;
   padding: 16px;
   padding-top: 30px;
