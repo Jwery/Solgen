@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './components/connexion/connexion.component';
-import { FormComponent } from './components/form/form.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SettingsComponent } from './pages/settings/settings.component';
@@ -24,13 +23,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { ChantierComponent } from './components/form/chantier/chantier.component';
-import { ResponsableComponent } from './components/form/responsable/responsable.component';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { NappeComponent } from './components/form/nappe/nappe.component';
 import { IntervalleComponent } from './components/intervalle/intervalle.component';
 import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { CardModule } from 'primeng/card';
+
+
 
 
 
@@ -43,7 +43,6 @@ import { CalendarModule } from 'primeng/calendar';
   declarations: [
     AppComponent,
     ConnexionComponent,
-    FormComponent,
     DashboardComponent,
     InscriptionComponent,
     SettingsComponent,
@@ -52,9 +51,6 @@ import { CalendarModule } from 'primeng/calendar';
     GraphicComponent,
     DragdropComponent,
     TableComponent,
-    ChantierComponent,
-    ResponsableComponent,
-    NappeComponent,
     IntervalleComponent,
     DateComponent
     
@@ -77,10 +73,14 @@ import { CalendarModule } from 'primeng/calendar';
     FormsModule,
     InputNumberModule,
     CalendarModule,
-    DropdownModule
+    DropdownModule,
+    FloatLabelModule,
+    DropdownModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+  
 }
