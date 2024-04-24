@@ -15,7 +15,7 @@ export class TogglesComponent  implements OnInit {
 
   ngOnInit() {
     this.municipalityServices.getMunicipalities().subscribe(data => {
-      this.municipalities = data.records.map(record => record.nom);
+      this.municipalities = data.map((recorder: { nom: any; }) => recorder.nom);
       this.selectedCity = this.municipalities[0];
     });
     console.log("coucou")
