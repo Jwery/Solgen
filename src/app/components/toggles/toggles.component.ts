@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MunicipalityService } from '../service/municipality-service.service';
 
 @Component({
   selector: 'app-toggles',
@@ -6,6 +7,21 @@ import { Component } from '@angular/core';
   styleUrl: './toggles.component.scss'
 })
 
-export class TogglesComponent   {
-  
+export class TogglesComponent  implements OnInit {
+  municipalities: any[]=["ANTOING"];
+  selectedCity: any = "ANTOING";
+
+  constructor(private municipalityServices: MunicipalityService) { }
+
+  ngOnInit() {
+    this.municipalityServices.getMunicipalities().subscribe(data => {
+      this.municipalities = data.records.map(record => record.nom);
+      this.selectedCity = this.municipalities[0];
+    });
+    console.log("coucou")
+  }
+
+  selectCity(city: string) {
+    this.selectedCity = city;
+  }
 }

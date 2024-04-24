@@ -2,6 +2,6 @@
     <label for="inputState">Commune</label>
     <select id="inputState" class="form-control">
       <option selected>Commune...</option>
-      <option>coucou</option>
+      <option *ngFor="let city of municipalities">{{ city }}</option>
     </select>
   </div>
