@@ -5,7 +5,7 @@ import { ConnexionComponent } from './components/connexion/connexion.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { TogglesComponent } from './components/toggles/toggles.component';
+import { TogglesComponent } from './components/city/city.component';
 
 
 const routes: Routes = [

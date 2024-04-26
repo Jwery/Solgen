@@ -24,11 +24,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { IntervalleComponent } from './components/intervalle/intervalle.component';
-import { DateComponent } from './components/date/date.component';
-import { CalendarModule } from 'primeng/calendar';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { TogglesComponent } from './components/toggles/toggles.component';
+import { CityComponent } from './components/city/city.component'
 
 @NgModule({
   declarations: [
@@ -42,10 +39,7 @@ import { TogglesComponent } from './components/toggles/toggles.component';
     GraphicComponent,
     DragdropComponent,
     TableComponent,
-    IntervalleComponent,
-    DateComponent, 
-    TogglesComponent
-    
+    CityComponent
   ],
   imports: [
 
@@ -64,7 +58,6 @@ import { TogglesComponent } from './components/toggles/toggles.component';
     BrowserModule,
     FormsModule,
     InputNumberModule,
-    CalendarModule,
     DropdownModule,
     FloatLabelModule,
     DropdownModule,
