@@ -1,5 +1,44 @@
-html,
-body{
-    height: 100%;
-    margin:0;
+
+.form{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    align-self: center;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid grey;
+    border-radius: 16px;
+    box-shadow: inset;
+    width: 40vw;
+
+}
+.logo{
+    width:100px;
+    margin: auto;
+}
+.inscription{
+    margin: auto;
+    text-decoration: none;
+    color: grey;
+    :hover{
+        color:#F57303
+    }
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    background-color:#1F223A;
+    padding-top: 100px;
+
+}
+.btn{
+    background-color: #F57303;
+    border: none;
+    width: 100%;
+    :hover{
+        background-color: #1F223A;
+        color:#F57303
+    }
 }

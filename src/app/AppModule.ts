@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ConnexionComponent } from './components/connexion/connexion.component';
+import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SettingsComponent } from './pages/settings/settings.component';
@@ -25,7 +25,6 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { CityComponent } from './components/city/city.component'
 
 @NgModule({
   declarations: [
@@ -38,8 +37,7 @@ import { CityComponent } from './components/city/city.component'
     FooterComponent,
     GraphicComponent,
     DragdropComponent,
-    TableComponent,
-    CityComponent
+    TableComponent
   ],
   imports: [
 
