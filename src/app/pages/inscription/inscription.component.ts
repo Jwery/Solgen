@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
-  styleUrls: ['./inscription.component.scss']
+  styleUrls: ['./inscription.component.scss'],
 })
 export class InscriptionComponent {
+  constructor(private router: Router) {}
 
-  onSubmit(event: Event) {
-    event.preventDefault(); // Pour empêcher le rechargement de la page
+  onSubmit(event?: Event) {
+    event?.preventDefault(); // Pour empêcher le rechargement de la page
 
     const nom = (document.getElementById('nomInput') as HTMLInputElement).value;
     const prenom = (document.getElementById('prenomInput') as HTMLInputElement).value;
@@ -31,10 +33,15 @@ export class InscriptionComponent {
       alert("Adresse e-mail invalide.");
       return;
     }
+    const checkbox = document.getElementById('exampleCheck1') as HTMLInputElement;
+    if (!checkbox.checked) {
+      alert("Veuillez accepter les conditions d'utilisation.");
+      return; 
+    }
 
     // Soumettre le formulaire si toutes les conditions sont remplies
     // Ici, vous pouvez ajouter le code pour soumettre le formulaire à votre backend
-    console.log("Formulaire soumis avec succès!");
+    this.router.navigate(['/dashboard']);
   }
 
   // Fonction pour valider l'e-mail

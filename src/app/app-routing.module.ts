@@ -5,7 +5,6 @@ import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import { InstantiateExpr } from '@angular/compiler';
 
 
 const routes: Routes = [
@@ -13,7 +12,7 @@ const routes: Routes = [
   { path:'connexion', component:ConnexionComponent },
   { path:'dashboard', component:DashboardComponent },
   { path:'settings', component:SettingsComponent },
-  { path:'Inscription', component:InscriptionComponent},
+  { path:'inscription', component:InscriptionComponent },
 
   
   ];
