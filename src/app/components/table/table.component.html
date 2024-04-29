@@ -8,11 +8,11 @@
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
-            <tr *ngFor="let f of fakedb">
-                <td>{{ f.Prof }}</td>
-                <td>{{ f.Rp }}</td>
-                <td>{{ f.Rt }}</td>
-            </tr>
+            <tr *ngFor="let item of gruData">
+                <td>{{ item.property1 }}</td>
+                <td>{{ item.property2 }}</td>
+                <!-- Affiche les autres propriétés selon la structure de tes données -->
+              </tr>
         </ng-template>
     </p-table>
 </div>

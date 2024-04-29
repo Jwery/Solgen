@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Input } from '@angular/core';
+
 
 
 @Component({
@@ -8,6 +10,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './table.component.scss'
 })
 export class TableComponent  {
+
+  @Input() gruData: any; // Déclaration de la propriété gruData avec l'annotation @Input
   url: string = '../../assets/fakedb.json'
   fakedb:any;
 
