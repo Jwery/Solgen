@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
@@ -22,22 +21,22 @@ import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
-
+import { InscriptionComponent } from './pages/inscription/inscription.component';
 @NgModule({
   declarations: [
     AppComponent,
     ConnexionComponent,
     DashboardComponent,
-    InscriptionComponent,
     SettingsComponent,
     HeaderComponent,
     FooterComponent,
     GraphicComponent,
     DragdropComponent,
-    TableComponent
+    TableComponent,
+    InscriptionComponent
   ],
   imports: [
 
@@ -59,8 +58,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     DropdownModule,
     FloatLabelModule,
     DropdownModule,
-    FormsModule,
-    BrowserModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
