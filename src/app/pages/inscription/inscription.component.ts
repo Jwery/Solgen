@@ -10,7 +10,7 @@ import { User } from '../../model/user'
 })
 export class InscriptionComponent {
   constructor(private router: Router, private UserService: UserService ) {
-    this.User= UserService.getall();
+    this.LitUsers= UserService.getall();
   }
   
 
@@ -19,37 +19,18 @@ export class InscriptionComponent {
   Email:string = '';
   Password:string = '';
 
-  User:Signal<User[]>;
+  LitUsers:Signal<User[]>;
 
 
   onSubmit(event?: Event) {
     event?.preventDefault(); // Prevent page reload
 
-    const firstNameInput = document.getElementById('firstnameInput2') as HTMLInputElement ;
-    const lastNameInput = document.getElementById('lastnameInput') as HTMLInputElement ;
+    const firstNameInput = document.getElementById('firstNameInput') as HTMLInputElement ;
+    const lastNameInput = document.getElementById('lastNameInput') as HTMLInputElement ;
     const emailInput = document.getElementById('emailInput') as HTMLInputElement ;
     const passwordInput = document.getElementById('passwordInput') as HTMLInputElement ;
     const repeatPasswordInput = document.getElementById('repeatPasswordInput') as HTMLInputElement ;
 
-    if (!firstNameInput || !lastNameInput || !emailInput || !passwordInput || !repeatPasswordInput) {
-        console.error('One or more input elements not found.');
-        if (!firstNameInput){
-            console.error('firstname est null');
-        }
-        if (!lastNameInput){
-          console.error('lastname est null');
-      }
-      if (!emailInput){
-        console.error('email est null');
-    }else{
-      console.error(emailInput.value);
-    }
-    if (!this.Password){
-      console.error('password est null');
-  }
-        
-        return;
-    }
 
     this.FirstName = firstNameInput.value;
     this.LastName = lastNameInput.value;
@@ -78,9 +59,15 @@ export class InscriptionComponent {
       return; 
     }
 
-    // Soumettre le formulaire si toutes les conditions sont remplies
-    // Ici, vous pouvez ajouter le code pour soumettre le formulaire à votre backend
-    this.router.navigate(['/dashboard']);
+    this.UserService.add( {
+
+      firstName : this.FirstName,
+      lastName : this.LastName,
+      email : this.Email,
+      password : this.Password,
+      
+    } as User); console.error('coucou');
+    // this.router.navigate(['/dashboard']);
   }
 
   // Fonction pour valider l'e-mail
@@ -89,16 +76,5 @@ export class InscriptionComponent {
     return re.test(email);
   }
 
-  add() {
-    if(!this.FirstName || !this.LastName || !this.Email || !this.Password){
-      return;
-    }
-  this.UserService.add({
-    firstName: this.FirstName,
-    lastName: this.LastName,
-    email: this.Email,
-    password: this.Password
-
-  });
-  }
+  
 }

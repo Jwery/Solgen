@@ -20,10 +20,12 @@ export class UserService {
   getuser():Observable<User[]>{
     return this.http.get<User[]>(this.baseApiUrl + 'AppUser')
   }
+
   add(User: User) {
-    return this.http.post<User>(this.baseApiUrl, User).pipe(tap(Response => {
-      this.users.update(u => [...u, Response])
-    }));
+    return this.http.post<User>(this.baseApiUrl, User)
+    .pipe(tap(response => {
+      this.users.update(u => [...u, response])
+    }))
   }
 
   getall(){
