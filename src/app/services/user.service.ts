@@ -2,14 +2,14 @@ import { Injectable, WritableSignal, signal } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { User } from '../model/user';
+import { AppUser } from '../model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  private users: WritableSignal<User[]> = signal<User[]>([]);
+  private users: WritableSignal<AppUser[]> = signal<AppUser[]>([]);
 
   baseApiUrl : string = environment.apiUrl;
 
@@ -17,20 +17,19 @@ export class UserService {
   constructor( private http: HttpClient) {}
    
 
-  getuser():Observable<User[]>{
-    return this.http.get<User[]>(this.baseApiUrl + 'AppUser')
+  getuser():Observable<AppUser[]>{
+    return this.http.get<AppUser[]>(this.baseApiUrl + 'AppUser')
   }
 
-  add(User: User) {
-    return this.http.post<User>(this.baseApiUrl, User)
+  add(User: AppUser) {
+    return this.http.post<AppUser>(this.baseApiUrl + 'AppUser', JSON.stringify(User))
     .pipe(tap(response => {
-      this.users.update(u => [...u, response])
+    this.users.update(u => [...u, response])
     }))
   }
 
   getall(){
     return this.users;
   }
-
 }
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { User } from '../../model/user';
+import { AppUser } from '../../model/user';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { UserService } from '../../services/user.service';
   styleUrl: './userview.component.scss'
 })
 export class UserviewComponent {
-  users: User[] = [];
+  users: AppUser[] = [];
 
   constructor(private userservice: UserService){
   

@@ -1,7 +1,7 @@
 import { Component,Signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-import { User } from '../../model/user'
+import { AppUser } from '../../model/user'
 
 @Component({
   selector: 'app-inscription',
@@ -19,11 +19,13 @@ export class InscriptionComponent {
   Email:string = '';
   Password:string = '';
 
-  LitUsers:Signal<User[]>;
+  LitUsers:Signal<AppUser[]>;
 
 
   onSubmit(event?: Event) {
+
     event?.preventDefault(); // Prevent page reload
+    
 
     const firstNameInput = document.getElementById('firstNameInput') as HTMLInputElement ;
     const lastNameInput = document.getElementById('lastNameInput') as HTMLInputElement ;
@@ -66,7 +68,7 @@ export class InscriptionComponent {
       email : this.Email,
       password : this.Password,
       
-    } as User); console.error('coucou');
+    } as AppUser); console.error(this.FirstName);
     // this.router.navigate(['/dashboard']);
   }
 
