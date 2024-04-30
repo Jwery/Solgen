@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,Signal } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import { User } from '../../model/user'
 
 @Component({
   selector: 'app-inscription',
@@ -7,29 +9,66 @@ import { Router } from '@angular/router';
   styleUrls: ['./inscription.component.scss'],
 })
 export class InscriptionComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private UserService: UserService ) {
+    this.User= UserService.getall();
+  }
+  
+
+  FirstName:string = '';
+  LastName:string = '';
+  Email:string = '';
+  Password:string = '';
+
+  User:Signal<User[]>;
+
 
   onSubmit(event?: Event) {
-    event?.preventDefault(); // Pour empêcher le rechargement de la page
+    event?.preventDefault(); // Prevent page reload
 
-    const nom = (document.getElementById('nomInput') as HTMLInputElement).value;
-    const prenom = (document.getElementById('prenomInput') as HTMLInputElement).value;
-    const email = (document.getElementById('emailInput') as HTMLInputElement).value;
-    const password = (document.getElementById('passwordInput') as HTMLInputElement).value;
-    const repeatPassword = (document.getElementById('repeatPasswordInput') as HTMLInputElement).value;
+    const firstNameInput = document.getElementById('firstnameInput2') as HTMLInputElement ;
+    const lastNameInput = document.getElementById('lastnameInput') as HTMLInputElement ;
+    const emailInput = document.getElementById('emailInput') as HTMLInputElement ;
+    const passwordInput = document.getElementById('passwordInput') as HTMLInputElement ;
+    const repeatPasswordInput = document.getElementById('repeatPasswordInput') as HTMLInputElement ;
+
+    if (!firstNameInput || !lastNameInput || !emailInput || !passwordInput || !repeatPasswordInput) {
+        console.error('One or more input elements not found.');
+        if (!firstNameInput){
+            console.error('firstname est null');
+        }
+        if (!lastNameInput){
+          console.error('lastname est null');
+      }
+      if (!emailInput){
+        console.error('email est null');
+    }else{
+      console.error(emailInput.value);
+    }
+    if (!this.Password){
+      console.error('password est null');
+  }
+        
+        return;
+    }
+
+    this.FirstName = firstNameInput.value;
+    this.LastName = lastNameInput.value;
+    this.Email = emailInput.value;
+    this.Password = passwordInput.value;
+    const repeatPassword = repeatPasswordInput.value;
 
     // Vérification des restrictions pour le mot de passe et l'email
-    if (password.length < 8) {
+    if (this.Password.length < 8) {
       alert("Le mot de passe doit contenir au moins 8 caractères.");
       return;
     }
     
-    if (password !== repeatPassword) {
+    if (this.Password !== repeatPassword) {
       alert("Les mots de passe ne correspondent pas.");
       return;
     }
 
-    if (!this.validateEmail(email)) {
+    if (!this.validateEmail(this.Email)) {
       alert("Adresse e-mail invalide.");
       return;
     }
@@ -48,5 +87,18 @@ export class InscriptionComponent {
   validateEmail(email: string): boolean {
     const re = /\S+@\S+\.\S+/;
     return re.test(email);
+  }
+
+  add() {
+    if(!this.FirstName || !this.LastName || !this.Email || !this.Password){
+      return;
+    }
+  this.UserService.add({
+    firstName: this.FirstName,
+    lastName: this.LastName,
+    email: this.Email,
+    password: this.Password
+
+  });
   }
 }

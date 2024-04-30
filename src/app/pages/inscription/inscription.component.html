@@ -3,18 +3,19 @@
       <img class="logo" src="../../../assets/Logo.svg" alt="logo" srcset="../../../assets/Logo.svg">
       <form id="inscriptionForm" (ngSubmit)="onSubmit()" data-dashlane-rid="c5f7437203c5b13e" data-form-type="other">
         <div class="input-group mb-3">
-          <span class="input-group-text" id="basic-addon1">Nom</span>
-          <input type="text" class="form-control" id="nomInput" placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1">
+          <span class="input-group-text" id="basic-addon1" >Nom</span>
+          <input type="text" class="form-control" id="lastNameInput"  placeholder="Nom" aria-label="Nom" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1">Prénom</span>
-          <input type="text" class="form-control" id="prenomInput" placeholder="Prénom" aria-label="Prénom" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" id="firstNameInput"  placeholder="Prénom" aria-label="Prénom" aria-describedby="basic-addon1">
         </div>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Adresse Email</label>
           <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" data-dashlane-rid="3595e20e0bf1cae7" data-form-type="email" data-kwimpalastatus="alive" data-kwimpalaid="1714232237724-0">
           <div id="emailHelp" class="form-text">Nous ne partageons pas vos données.</div>
         </div>
+        
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
           <input type="password" class="form-control" id="passwordInput" data-dashlane-rid="574ad49ab5066a33" data-form-type="password" data-kwimpalastatus="alive" data-kwimpalaid="1714232237724-1">
@@ -27,7 +28,7 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1" data-dashlane-rid="9e8ccf85fe20bc10" data-form-type="other">
           <label class="form-check-label" for="exampleCheck1">Conditions d'uilisation</label>
         </div>
-        <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">S'enregistrer</button>
+        <button (onClick)="add()" type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">S'enregistrer</button>
       </form>
       <a class="inscription" href="http://localhost:4200/connexion">Connexion</a>
     </div>

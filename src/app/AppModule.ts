@@ -25,6 +25,7 @@ import { FormBuilder, FormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
+import { UserviewComponent } from './pages/userview/userview.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { InscriptionComponent } from './pages/inscription/inscription.component'
     GraphicComponent,
     DragdropComponent,
     TableComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    UserviewComponent
   ],
   imports: [
 
