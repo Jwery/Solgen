@@ -3,6 +3,7 @@ import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { AppUser } from '../model/user';
+import { LoginForm } from '../model/loginForm';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +23,7 @@ export class UserService {
   }
 
   add(User: AppUser) {
-    return this.http.post<AppUser>(this.baseApiUrl + 'AppUser', JSON.stringify(User))
+    return this.http.post<AppUser>(this.baseApiUrl + 'AppUser', User)
     .pipe(tap(response => {
     this.users.update(u => [...u, response])
     }))
@@ -31,5 +32,15 @@ export class UserService {
   getall(){
     return this.users;
   }
+
+  login(User:LoginForm){
+    return this.http.post<string>(this.baseApiUrl + 'Appuser/login',User)
+    .pipe(tap(response => {
+        console.log(response)
+        this.token.update(u=>response)
+      }))
+  }
+  token: WritableSignal<string> = signal<string> ('');
+
 }
 
