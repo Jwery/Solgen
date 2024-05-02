@@ -2,26 +2,30 @@
 
    
     <div class="main">
-        <div class="left">
-                <!-- <h1>Bonjour {{users[0].firstName}}</h1> -->
-            <h3 class="title" id="editableTitle" contenteditable="true">Double cliquez pour modifier le nom du projet</h3>
+        <h3 class="title" id="editableTitle" contenteditable="true">Double cliquez pour modifier le nom du projet</h3>
+        <div class="dash">
+        
+                <div class="table_left">         
+                    <p-card class="tabledash" header="Importation de données">
+                        <DragdropComponent></DragdropComponent>
+                    </p-card>
+                    <p-card class="tabledash" header="Tableau">
+                        <TableComponent></TableComponent>   
+                    </p-card>
+                </div> 
+                <script src="script.ts"></script>
 
-    <div class="table_right">         
-<p-card class="tabledash" header="Importation de données">
-    <DragdropComponent></DragdropComponent>
-</p-card>
-<p-card class="tabledash" header="Tableau">
-    <TableComponent></TableComponent>   
-</p-card>
-</div> 
-
-
-            <script src="script.ts"></script>
-
-        </div>
+                <div class="table_right">
+                    <p-card>
+                        <h4>Informations du chantier</h4>
+                        <app-worksite></app-worksite>
+                        
+                    </p-card>
+                </div>
             <GraphicComponent class="graphe"></GraphicComponent>
             
         </div>
+    </div>
     
     
 

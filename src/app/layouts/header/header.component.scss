@@ -60,3 +60,18 @@ img{
     height: 10vh;
     width: 10vw;
 }
+
+.btn-outline-success{
+    color:#F77503;
+    border-color: #F77503;
+    :hover{
+        color:#F77503;
+        background-color: #1F223A;
+        border-color: #F77503;  
+    }
+    :active{
+        color:#F77503;
+        background-color: #1F223A;
+        border-color: #1F223A; 
+    }
+}

@@ -19,7 +19,6 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -27,6 +26,9 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
+import { WorksiteComponent } from './components/worksite/worksite.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,9 @@ import { CardModule } from 'primeng/card'
     DragdropComponent,
     TableComponent,
     InscriptionComponent,
-    UserviewComponent
+    UserviewComponent,
+    WorksiteComponent
+    
   ],
   imports: [
 
@@ -63,7 +67,8 @@ import { CardModule } from 'primeng/card'
     DropdownModule,
     FormsModule,
     ReactiveFormsModule,
-    CardModule
+    CardModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

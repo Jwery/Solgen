@@ -1,0 +1,4 @@
+<div class="card flex justify-content-center">
+    <p-autoComplete [(ngModel)]="selectedItem" [virtualScroll]="true" [virtualScrollItemSize]="34" (completeMethod)="filterItems($event)" field="label" [dropdown]="true"> </p-autoComplete>
+</div>
+<!-- [suggestions]="filteredItems"  -->
