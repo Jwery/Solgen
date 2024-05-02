@@ -3,21 +3,20 @@
    
     <div class="main">
         <div class="left">
-                <h1>Bonjour {{users[0].firstName}}</h1>
-            <h2 class="title" id="editableTitle" contenteditable="true">Touchez pour modifier le nom du projet</h2>
+                <!-- <h1>Bonjour {{users[0].firstName}}</h1> -->
+            <h3 class="title" id="editableTitle" contenteditable="true">Double cliquez pour modifier le nom du projet</h3>
+
+    <div class="table_right">         
+<p-card class="tabledash" header="Importation de données">
+    <DragdropComponent></DragdropComponent>
+</p-card>
+<p-card class="tabledash" header="Tableau">
+    <TableComponent></TableComponent>   
+</p-card>
+</div> 
+
+
             <script src="script.ts"></script>
-        <div class="table">
-            <DragdropComponent></DragdropComponent>
-        </div>
-        <div class="tabledash">
-            <TableComponent></TableComponent>   
-        </div>
-        </div>
-        <div class="right">
-            <div class="table_right"> 
-            </div>
-            <div class="table_right_2">
-            </div>
 
         </div>
             <GraphicComponent class="graphe"></GraphicComponent>

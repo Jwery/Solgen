@@ -75,7 +75,7 @@ export class InscriptionComponent {
 
     this.UserService.add(this.formGroup.value).subscribe({
       next: () => {
-       //this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
     }, error: err => {
       console.error(err);
     }}); 

@@ -26,6 +26,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { UserviewComponent } from './pages/userview/userview.component';
+import { CardModule } from 'primeng/card'
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,7 @@ import { UserviewComponent } from './pages/userview/userview.component';
     DropdownModule,
     FormsModule,
     ReactiveFormsModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

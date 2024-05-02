@@ -27,8 +27,7 @@ export class ConnexionComponent {
   onSubmit(event?: Event){
     this.userService.login(this.formGroup.value).subscribe({
       next: () => {
-        console.error("Coucou les loulous")
-        //this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       }, error: err => {
       console.error(err);
       }});
