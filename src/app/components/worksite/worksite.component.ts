@@ -1,9 +1,7 @@
-
-import { Component } from '@angular/core';
-
-interface AutoCompleteCompleteEvent {
-  originalEvent: Event;
-  query: string;
+import { Component, OnInit } from '@angular/core';
+interface City {
+  name: string;
+  code: string;
 }
 
 @Component({
@@ -11,32 +9,22 @@ interface AutoCompleteCompleteEvent {
   templateUrl: './worksite.component.html',
   styleUrl: './worksite.component.scss'
 })
-export class WorksiteComponent {
-  selectedItem: any;
+export class WorksiteComponent implements OnInit {
 
-  filteredItems: any[] | undefined;
+  cities: City[] | undefined;
 
-  items: any[] | undefined;
+  selectedCity: City | undefined;
 
-  filterItems(event: AutoCompleteCompleteEvent) {
-      //in a real application, make a request to a remote url with the query and return filtered results, for demo we filter at client side
-      let filtered: any[] = [];
-      let query = event.query;
-
-      for (let i = 0; i < (this.items as any[]).length; i++) {
-          let item = (this.items as any[])[i];
-          if (item.label.toLowerCase().indexOf(query.toLowerCase()) == 0) {
-              filtered.push(item);
-          }
-      }
-
-      this.filteredItems = filtered;
-  }
+  formGroup: any;
 
   ngOnInit() {
-      this.items = [];
-      for (let i = 0; i < 10000; i++) {
-          this.items.push({ label: 'Item ' + i, value: 'Item ' + i });
-      }
+      this.cities = [
+          { name: 'New York', code: 'NY' },
+          { name: 'Rome', code: 'RM' },
+          { name: 'London', code: 'LDN' },
+          { name: 'Istanbul', code: 'IST' },
+          { name: 'Paris', code: 'PRS' }
+      ];
   }
 }
+

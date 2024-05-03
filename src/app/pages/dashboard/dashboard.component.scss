@@ -11,7 +11,6 @@ $color-darkgrey: #282828;
 
 .title{
     margin: 10px;
-    margin-left:30px;
     margin-bottom: 10px;
     cursor: pointer;
 
@@ -53,6 +52,7 @@ $color-darkgrey: #282828;
 }
 .table_right{
     border-radius: 24px;
+    width: 40vw;    
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
@@ -61,6 +61,7 @@ $color-darkgrey: #282828;
 }
 .table_left{
     border-radius: 24px;
+    width: 40vw;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
@@ -74,19 +75,11 @@ $color-darkgrey: #282828;
     flex-wrap: wrap;
 }
 .graphe{
-    width: 600px;
-    min-width: 300px;
-    position:fixed;
-    right: 0;
-    align-self: center;
-    height:100%;
 
     @media only screen and (max-width: 1500px) {
-        margin: 0 auto;
-        position:initial;
-        width: 90vw;
     }
 }
+
 .p-button{
 background-color : #F77503;
 border:#F77503;

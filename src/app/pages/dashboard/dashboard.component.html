@@ -2,10 +2,11 @@
 
    
     <div class="main">
-        <h3 class="title" id="editableTitle" contenteditable="true">Double cliquez pour modifier le nom du projet</h3>
+        
         <div class="dash">
         
-                <div class="table_left">         
+                <div class="table_left">  
+                    <h3 class="title" id="editableTitle" contenteditable="true">Double cliquez pour modifier le nom du projet</h3>       
                     <p-card class="tabledash" header="Importation de données">
                         <DragdropComponent></DragdropComponent>
                     </p-card>
@@ -21,8 +22,12 @@
                         <app-worksite></app-worksite>
                         
                     </p-card>
+                    <p-card class="graphe">
+                        <GraphicComponent class="graphmodule"></GraphicComponent>
+                </p-card>
                 </div>
-            <GraphicComponent class="graphe"></GraphicComponent>
+            
+            
             
         </div>
     </div>

@@ -20,7 +20,7 @@ import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
@@ -43,7 +43,6 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     InscriptionComponent,
     UserviewComponent,
     WorksiteComponent
-    
   ],
   imports: [
 
@@ -60,15 +59,14 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AutoCompleteModule,
     DropdownModule,
     BrowserModule,
-    FormsModule,
     InputNumberModule,
     DropdownModule,
     FloatLabelModule,
     DropdownModule,
-    FormsModule,
     ReactiveFormsModule,
     CardModule,
-    AutoCompleteModule
+    AutoCompleteModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
