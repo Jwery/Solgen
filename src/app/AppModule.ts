@@ -20,14 +20,15 @@ import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
-import { WorksiteComponent } from './components/worksite/worksite.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { InputTextModule } from 'primeng/inputtext';
+import { WorksiteComponent } from './components/worksite/worksite.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     ReactiveFormsModule,
     CardModule,
     AutoCompleteModule,
-    FormsModule
+    FormsModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

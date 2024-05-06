@@ -1,30 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-interface City {
-  name: string;
-  code: string;
-}
+import { CommunesService } from '../../services/city.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { AppCity } from '../../model/City';
+
 
 @Component({
   selector: 'app-worksite',
   templateUrl: './worksite.component.html',
-  styleUrl: './worksite.component.scss'
+  styleUrls: ['./worksite.component.scss'],
+  standalone: true,
+  imports: [ReactiveFormsModule, InputTextModule]
 })
 export class WorksiteComponent implements OnInit {
+  communes: string[] = []; 
 
-  cities: City[] | undefined;
-
-  selectedCity: City | undefined;
-
-  formGroup: any;
-
-  ngOnInit() {
-      this.cities = [
-          { name: 'New York', code: 'NY' },
-          { name: 'Rome', code: 'RM' },
-          { name: 'London', code: 'LDN' },
-          { name: 'Istanbul', code: 'IST' },
-          { name: 'Paris', code: 'PRS' }
-      ];
+  constructor(private communesService: CommunesService) { }
+  ngOnInit(): void {
+    
+    this.communesService.getNomCourtsCommunes(20).subscribe(
+      (data: string[]) => {
+        
+        this.communes = data;
+      },
+      (error: any) => {
+        console.error('Une erreur s\'est produite :', error);
+      }
+    );
   }
 }
-
