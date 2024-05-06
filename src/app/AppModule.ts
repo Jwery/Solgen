@@ -27,6 +27,7 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -65,7 +66,7 @@ import { CardModule } from 'primeng/card'
     ReactiveFormsModule,
     CardModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

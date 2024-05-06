@@ -1,9 +1,12 @@
 import { Injectable, WritableSignal, signal } from '@angular/core';
 import { environment } from '../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
+import { Observable, firstValueFrom, tap } from 'rxjs';
 import { AppUser } from '../model/user';
 import { LoginForm } from '../model/loginForm';
+import { FullUser } from '../model/fullUser';
+import { HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +17,7 @@ export class UserService {
 
   baseApiUrl : string = environment.apiUrl;
 
-
-  constructor( private http: HttpClient) {}
-   
+  constructor( private http: HttpClient, private cookieService : CookieService) {}
 
   getuser():Observable<AppUser[]>{
     return this.http.get<AppUser[]>(this.baseApiUrl + 'AppUser')
@@ -36,11 +37,23 @@ export class UserService {
   login(User:LoginForm){
     return this.http.post<string>(this.baseApiUrl + 'Appuser/login',User)
     .pipe(tap(response => {
-        console.log(response)
-        this.token.update(u=>response)
+        this.cookieService.set('token', response);
       }))
   }
-  token: WritableSignal<string> = signal<string> ('');
+
+  logOut(){
+    this.cookieService.set('token','')
+  }
+  
+  update(User:FullUser){
+    const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
+    return this.http.post<FullUser>(this.baseApiUrl + 'Appuser/'+User.id,User,{headers})
+  }
+
+  getLoggedUser(){
+    const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
+    return firstValueFrom(this.http.get<FullUser>(this.baseApiUrl + 'AppUser/GetLoginUser',{headers}))
+  }
 
 }
 
