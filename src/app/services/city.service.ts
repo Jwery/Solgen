@@ -2,21 +2,22 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { AppCity } from '../model/city';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CommunesService {
+export class CityService {
 
-  private apiUrl = 'https://www.odwb.be/api/explore/v2.1/catalog/datasets/communes_s3/records';
+  public apiUrl = '../../assets/fakedb.json' 
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  getNomCourtsCommunes(limit: number): Observable<string[]> {
-    const url = `${this.apiUrl}?limit=${limit}`;
+  getNomCourtsCommunes(): Observable<string[]> {
+    const url = `${this.apiUrl}`;
     return this.http.get<any>(url).pipe(
       map(response => {
-        return response.records.map((record: any) => record.fields.nom_court);
+        return response.records.map((record: AppCity) => record.nom);
       })
     );
   }
