@@ -7,8 +7,8 @@ import { CityService } from '../../services/city.service'
   styleUrls: ['./worksite.component.scss'],
 })
 export class WorksiteComponent implements OnInit {
-    @Input() gruData: any; // Déclaration de la propriété gruData avec l'annotation @Input
-    url: string = 'https://www.odwb.be/api/explore/v2.1/catalog/datasets/communes_s3/records'
+    @Input() 
+    // gruData: any; // Déclaration de la propriété gruData avec l'annotation @Input
     API:any;
     CityList:string[] = []
   
@@ -16,7 +16,6 @@ export class WorksiteComponent implements OnInit {
     }
   
     ngOnInit() {
-      this.http.get(this.url).subscribe(res => {this.API = res;})
       this.getList()
     }
    

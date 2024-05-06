@@ -9,7 +9,7 @@ import { AppCity } from '../model/city';
 })
 export class CityService {
 
-  public apiUrl = '../../assets/fakedb.json' 
+  public apiUrl = 'https://www.odwb.be/api/explore/v2.1/catalog/datasets/communes_s3/records' 
 
   constructor(public http: HttpClient) { }
 
