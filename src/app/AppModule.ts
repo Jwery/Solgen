@@ -29,6 +29,14 @@ import { CardModule } from 'primeng/card'
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
 import { WorksiteComponent } from './components/worksite/worksite.component';
+import { ChantierComponent } from './components/chantier/chantier.component';
+import { ResponsableComponent } from './components/responsable/responsable.component';
+import { NappeComponent } from './components/nappe/nappe.component';
+import { IntervalleComponent } from './components/intervalle/intervalle.component';
+import { DateComponent } from './components/date/date.component';
+import { CalendarModule } from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 
 @NgModule({
   declarations: [
@@ -43,7 +51,12 @@ import { WorksiteComponent } from './components/worksite/worksite.component';
     TableComponent,
     InscriptionComponent,
     UserviewComponent,
-    WorksiteComponent
+    WorksiteComponent,
+    ChantierComponent,
+    ResponsableComponent,
+    NappeComponent,
+    IntervalleComponent,
+    DateComponent
   ],
   imports: [
 
@@ -68,7 +81,11 @@ import { WorksiteComponent } from './components/worksite/worksite.component';
     CardModule,
     AutoCompleteModule,
     FormsModule,
-    InputTextModule
+    InputTextModule,
+    CalendarModule,
+    FloatLabelModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

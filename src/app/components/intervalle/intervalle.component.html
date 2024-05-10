@@ -1,0 +1,14 @@
+<p-inputNumber 
+    [(ngModel)]="value2" 
+    mode="decimal" 
+    [showButtons]="true" 
+    inputId="minmax-buttons" 
+    placeholder="Intervalle"
+    step="0.01"
+    [min]="0.01" 
+    [max]="100"
+    suffix="m" /> 
+
+    <p-button label="0.25" [rounded]="true" severity="primary" />
+    
+    <p-button label="0.20" [rounded]="true" severity="primary" />
