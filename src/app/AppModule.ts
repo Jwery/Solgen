@@ -28,6 +28,8 @@ import { InscriptionComponent } from './pages/inscription/inscription.component'
 import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
 import { CookieService } from 'ngx-cookie-service';
+import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import { CookieService } from 'ngx-cookie-service';
     DragdropComponent,
     TableComponent,
     InscriptionComponent,
-    UserviewComponent
+    UserviewComponent,
+    ModifyPasswordComponent
   ],
   imports: [
 

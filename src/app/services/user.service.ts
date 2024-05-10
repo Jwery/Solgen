@@ -47,7 +47,7 @@ export class UserService {
   
   update(User:FullUser){
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    console.log(headers)
+    console.log(User.id)
     let UserModified:AppUser={
       firstName:User.firstName,
       lastName:User.lastName,

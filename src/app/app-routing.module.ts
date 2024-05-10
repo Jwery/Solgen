@@ -8,6 +8,7 @@ import { SettingsComponent } from './pages/settings/settings.component';
 import { UserviewComponent } from './pages/userview/userview.component';
 import { UserService } from './services/user.service';
 import { userResolver } from './resolver/userResolver';
+import {ModifyPasswordComponent} from './pages/settings/modifyPassword/modifyPassword.component'
 
 const routes: Routes = [
   { path:'', redirectTo:'dashboard',pathMatch:'full' },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path:'dashboard', component:DashboardComponent },
   { path:'settings', component:SettingsComponent,resolve:{user:userResolver}},
   { path:'inscription', component:InscriptionComponent },
-  { path:'userview', component:UserviewComponent}
+  { path:'userview', component:UserviewComponent},
+  { path:'modifyPassword', component:ModifyPasswordComponent,resolve:{user:userResolver} },
 
   
   ];

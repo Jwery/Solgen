@@ -59,7 +59,7 @@ export class SettingsComponent {
       }
 
       return null
-    };
+    }
 
   modify(){
       this.modifying=true
@@ -72,7 +72,7 @@ export class SettingsComponent {
     }
 
     modifyPassword(){
-
+      this.router.navigate(['modifyPassword'])
     }
 }
 
