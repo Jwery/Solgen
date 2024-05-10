@@ -47,7 +47,17 @@ export class UserService {
   
   update(User:FullUser){
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    return this.http.post<FullUser>(this.baseApiUrl + 'Appuser/'+User.id,User,{headers})
+    console.log(headers)
+    let UserModified:AppUser={
+      firstName:User.firstName,
+      lastName:User.lastName,
+      email:User.email,
+      password:User.password
+    }
+   
+    console.log(UserModified)
+    console.log(this.baseApiUrl + 'Appuser/'+User.id)
+    return this.http.put<FullUser>(this.baseApiUrl + 'Appuser/'+User.id,UserModified,{headers})
   }
 
   getLoggedUser(){

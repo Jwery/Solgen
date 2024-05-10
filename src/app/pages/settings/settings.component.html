@@ -2,37 +2,41 @@
 <div>
     <h2>Paramètres</h2>
     <form [formGroup]="formGroup" data-dashlane-rid="c5f7437203c5b13e" data-form-type="other" (ngSubmit)="onSubmit()">
+
         <div class="mb-3">
             <label   class="form-label">Prénom</label>
             <input id="firstName" type="firstName" class="form-control" formControlName="firstName">
         </div>
+
         <div class="mb-3">
             <label   class="form-label">Nom</label>
             <input id="lastName" type="lastName" class="form-control" formControlName="lastName">
           </div>
+
         <div class="mb-3">
           <label   class="form-label">Adresse Email</label>
-          <input id="email" type="email" required="true" class="form-control" formControlName="email" aria-describedby="emailHelp" data-dashlane-rid="3595e20e0bf1cae7" data-form-type="email" data-kwimpalastatus="alive" data-kwimpalaid="1714232237724-0">
+          <input id="email" type="email" required="true" class="form-control" formControlName="email" aria-describedby="emailHelp" data-form-type="email" data-kwimpalastatus="alive">
         </div>
 
-
-        <div class="mb-3" *ngIf="modifying">
+        <!-- <div class="mb-3">
           <label class="form-label">Mot de passe</label>
-          <input type="password" id="password" class="form-control" formControlName="password" data-dashlane-rid="574ad49ab5066a33" data-form-type="password" data-kwimpalastatus="alive" data-kwimpalaid="1714232237724-1">
+          <input type="password" id="password" class="form-control" formControlName="password" data-form-type="password" >
         </div>
 
-          <div class="mb-3"  *ngIf="modifying" >
+          <div class="mb-3"  >
             <label class="form-label">Répéter le mot de passe</label>
-            <input type="repeatPassword" id="repeatPassword" class="form-control" formControlName="repeatPassword" data-dashlane-rid="574ad49ab5066a33" data-form-type="password" data-kwimpalastatus="alive" data-kwimpalaid="1714232237724-1">
-          </div>
-          <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true" *ngIf="modifying" >Enregistrer</button>
+            <input type="repeatPassword" id="repeatPassword" class="form-control" formControlName="repeatPassword" data-form-type="password" >
+          </div> -->
+
+          <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary" *ngIf="modifying">Enregistrer</button>
         
         
       </form>
      
         <button  class="btn btn-primary" (click)="modify()" *ngIf="!modifying" >Modifier</button>
+        <p><a href="html_images.asp" *ngIf="modifying">Modifier le mot de passe</a></p>
       
-      <button  class="btn btn-primary" (click)="logOut()" >Se déconnecter</button>
+      <button  class="btn btn-primary" (click)="logOut()" *ngIf="!modifying">Se déconnecter</button>
      
 </div>
 

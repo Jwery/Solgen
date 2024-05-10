@@ -4,4 +4,5 @@ export interface FullUser {
     lastName: string,
     displayName: string,
     email: string,
+    password:string|null
 }

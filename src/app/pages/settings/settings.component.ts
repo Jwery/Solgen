@@ -17,10 +17,9 @@ import { ActivatedRoute } from '@angular/router';
 export class SettingsComponent {
   formGroup!: FormGroup
   user!:FullUser
-  private userService!:UserService;
   modifying:boolean = false;
 
-  constructor(private router: Router, userService: UserService, formBuilder: FormBuilder,route: ActivatedRoute){
+  constructor(private router: Router, private userService: UserService, formBuilder: FormBuilder,route: ActivatedRoute){
     
     this.user = route.snapshot.data['user']
     this.formGroup = formBuilder.group
@@ -29,42 +28,51 @@ export class SettingsComponent {
         firstName: [this.user.firstName,[Validators.required]],
         lastName: [this.user.lastName,[Validators.required]],
         email: [this.user.email, [Validators.required]],
-        password: [null, [Validators.required,(c: any) => this.validateRepeatPassword(c),, Validators.minLength(8)]],
-        repeatPassword: [null,  [Validators.required]],
+      // password: [null, [ Validators.minLength(8)]],
+        // repeatPassword: [null,  [(c: any) => this.validateRepeatPassword(c)]],
       })
       this.formGroup.disable()
     }
 
   onSubmit(event?: Event){
-    this.userService.update(this.formGroup.value).subscribe({
+    this.formGroup.disable()
+    var user:FullUser = this.formGroup.value as FullUser
+    this.userService.update(user).subscribe({
       next: () => {
         this.router.navigate(['/dashboard']);
       }, error: err => {
       console.error(err);
       }});
-      location.reload()
     }
-    validateRepeatPassword(control: AbstractControl) {
+
+
+  validateRepeatPassword(control: AbstractControl) {
       this.modifying=false
+      if(this.formGroup.controls['password'].value===null){
+        return null
+      }
       if(control.value===null){
         return {notMatch:true}
       }
-      if(control.value !== this.formGroup.controls['repeatPassword'].value) {
+      if(control.value !== this.formGroup.controls['password'].value) {
         return { notMatch: true }
       }
 
       return null
     };
 
-    modify(){
-      console.log('hello')
+  modify(){
       this.modifying=true
       this.formGroup.enable()
     }
 
-    logOut(){
+  logOut(){
       this.userService.logOut()
       this.router.navigate(['connexion'])
+    }
+
+    modifyPassword(){
+
     }
 }
 
