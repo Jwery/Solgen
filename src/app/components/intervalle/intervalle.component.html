@@ -9,6 +9,6 @@
     [max]="100"
     suffix="m" /> 
 
-    <p-button label="0.25" [rounded]="true" severity="primary" />
+    <p-button label="0.25" [rounded]="true" severity="primary" (click)="updateValue(valueDefault1)"></p-button>
     
-    <p-button label="0.20" [rounded]="true" severity="primary" />
+    <p-button label="0.20" [rounded]="true" severity="primary" (click)="updateValue(valueDefault2)"></p-button>

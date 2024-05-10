@@ -17,7 +17,7 @@ export class GraphicComponent implements OnInit {
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
         
         this.data = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['1', '2', 'March', 'April', 'May', 'June', 'July'],
             datasets: [
                 {
                     label: 'Dataset 1',

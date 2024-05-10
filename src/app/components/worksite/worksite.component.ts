@@ -11,6 +11,7 @@ export class WorksiteComponent implements OnInit {
     @Input() 
     API:any;
     CityList:string[] = [];
+    SelectedCity:string|null = null;
   
     constructor(private http: HttpClient, private cityService: CityService) {
     }
