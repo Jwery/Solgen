@@ -29,6 +29,8 @@ import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
 import { CookieService } from 'ngx-cookie-service';
 import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +69,11 @@ import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyP
     DropdownModule,
     FormsModule,
     ReactiveFormsModule,
-    CardModule
+    CardModule,
+    InputIconModule,
+    IconFieldModule,
+    InputTextModule
+
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
