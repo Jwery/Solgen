@@ -5,7 +5,6 @@ $color-darkgrey: #282828;
 @import "primeicons/primeicons.css";
 *{
     display: block;
-    padding: 10px;
 
 }
 
@@ -21,6 +20,7 @@ $color-darkgrey: #282828;
     margin: auto;
     flex-wrap: wrap;        
     height: 70%;
+    padding: 30px;
     @media only screen and (max-width: 600px) {
         justify-content: center;
     }
@@ -62,6 +62,7 @@ $color-darkgrey: #282828;
 .table_left{
     border-radius: 24px;
     width: 40vw;
+    margin-right: 30px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
@@ -84,4 +85,13 @@ $color-darkgrey: #282828;
 .p-button{
 background-color : #F77503;
 border:#F77503;
+}
+btn-primary{
+    width: 100%;
+}
+p-card{
+    margin: 30px;
+}
+.i{
+    margin-top: 20px;
 }
