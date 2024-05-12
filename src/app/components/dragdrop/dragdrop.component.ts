@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { DragdropService } from '../../services/dragdrop.service';
 
 interface UploadEvent {
   originalEvent: Event;
@@ -14,10 +15,10 @@ interface UploadEvent {
 export class DragdropComponent {
 
   gruData: any;
-  
+
   uploadedFiles: any[] = [];
 
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService, private dragdropService: DragdropService) {}
 
   onUpload(event: any) {
     if (event.files && event.files.length > 0) {
@@ -28,32 +29,19 @@ export class DragdropComponent {
           return;
         }
 
-        // Lecture du contenu du fichier
-        this.readUploadedFile(file);
+        // Appel du service pour récupérer les données du fichier
+        this.dragdropService.GetEssayFromFile(file.name).subscribe(
+          (data) => {
+            this.gruData = data;
+            this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+          },
+          (error) => {
+            console.error('Erreur lors de la récupération des données du fichier :', error);
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Erreur lors de la récupération des données du fichier.'});
+          }
+        );
       }
-      this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
     }
-  }
-
-  readUploadedFile(event: any): void {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      if (reader.result instanceof ArrayBuffer) {
-        console.error('Erreur de lecture du fichier .GRU : le contenu est un ArrayBuffer.');
-        return;
-      }
-
-      const content = reader.result as string;
-      try {
-        // Suppose que le contenu est un objet JSON
-        const parsedData = JSON.parse(content);
-        this.gruData = parsedData.Data; // Supposons que les données sont stockées dans une propriété "Data"
-      } catch (error) {
-        console.error('Erreur de lecture du fichier .GRU :', error);
-      }
-    };
-    reader.readAsText(file);
   }
 
   isValidFileExtension(file: File): boolean {
