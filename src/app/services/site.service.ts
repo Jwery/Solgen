@@ -7,32 +7,24 @@ import { LoginForm } from '../model/loginForm';
 import { FullUser } from '../model/fullUser';
 import { HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
-import { Essay } from '../model/Essay';
+import { Site } from '../model/Site';
 
 @Injectable({
     providedIn: 'root'
   })
-  export class EssayService {
-    private essays: WritableSignal<Essay[]> = signal<Essay[]>([]);
+  export class SiteService {
 
   baseApiUrl : string = environment.apiUrl;
 
   constructor( private http: HttpClient, private cookieService : CookieService) {}
 
-  getEssay():Observable<Essay[]>{
+  getSites():Observable<Site[]>{
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    return this.http.get<Essay[]>(this.baseApiUrl + 'Essay',{headers})
+    return this.http.get<Site[]>(this.baseApiUrl + 'Sites',{headers})
   }
 
-  getEssayByNum(num:number):Observable<Essay[]>{
+  getByName(name:string):Observable<Site[]>{
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    return this.http.get<Essay[]>(this.baseApiUrl+'Essay/GetByNum/'+num,{headers})
+    return this.http.get<Site[]>(this.baseApiUrl+'Sites/GetByName/'+name,{headers})
   }
-
-  getBySite(id:number):Observable<Essay[]>{
-    const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    return this.http.get<Essay[]>(this.baseApiUrl+'Essay/GetBySite/'+ id,{headers})
-  }
-
-  }
-  
+}
