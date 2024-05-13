@@ -45,7 +45,7 @@ export class DragdropComponent {
   }
 
   isValidFileExtension(file: File): boolean {
-    const allowedExtensions = ['.GRU'];
+    const allowedExtensions = ['GRU'];
     const extension = file.name.split('.').pop()?.toUpperCase(); // Obtient l'extension du fichier et convertit en majuscules
     if (extension) {
       return allowedExtensions.includes(extension);

@@ -26,7 +26,7 @@ export class GraphicComponent implements OnInit {
                     borderColor: documentStyle.getPropertyValue('--blue-500'),
                     yAxisID: 'y',
                     tension: 0.4,
-                    data: [65, 59, 80, 81, 56, 55, 10]
+                    data: [65, 59, 80, 81, 56, 55, 1000]
                 },
                 {
                     label: 'Dataset 2',
@@ -34,7 +34,7 @@ export class GraphicComponent implements OnInit {
                     borderColor: documentStyle.getPropertyValue('--orange-500'),
                     yAxisID: 'y1',
                     tension: 0.4,
-                    data: [28, 48, 40, 19, 86, 27, 90]
+                    data: [28, 48, 40, 19, 86, 27, 10000]
                 }
             ]
         };

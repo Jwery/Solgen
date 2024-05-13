@@ -12,6 +12,7 @@ export class DragdropService {
   constructor(private http: HttpClient) { }
 
   GetEssayFromFile(fileName: string): Observable<any> {
+    
     const url = `${this.apiUrl}/${fileName}`;
     return this.http.get(url);
   }
