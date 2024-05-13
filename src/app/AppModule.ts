@@ -26,6 +26,10 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
 import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
+import { CookieService } from 'ngx-cookie-service';
+import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
+
+
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
 import { WorksiteComponent } from './components/worksite/worksite.component';
@@ -50,6 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     DragdropComponent,
     TableComponent,
     InscriptionComponent,
+    UserviewComponent,
+    ModifyPasswordComponent,
     UserviewComponent,
     WorksiteComponent,
     ChantierComponent,
@@ -79,6 +85,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     DropdownModule,
     ReactiveFormsModule,
     CardModule,
+    InputIconModule,
+    IconFieldModule,
+    InputTextModule,
+
+    CardModule,
     AutoCompleteModule,
     FormsModule,
     InputTextModule,
@@ -87,7 +98,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     BrowserAnimationsModule
     
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
