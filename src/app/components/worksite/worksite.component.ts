@@ -24,7 +24,6 @@ export class WorksiteComponent implements OnInit {
    getList(){
      this.cityService.getNomCourtsCommunes().subscribe({
         next:(citys =>{
-          console.log(citys);
             this.CityList=citys
         }),
         error:(err => console.error(err))
