@@ -15,10 +15,34 @@
             <a class="nav-link" routerLink="/settings">Paramètres</a>
           </li>
         </ul>
-        <p-iconField iconPosition="right">
-          <p-inputIcon styleClass="pi pi-search" />
-          <input type="text" pInputText placeholder="Recherche" />
-      </p-iconField>
+
+      <p-dropdown 
+        [options]="sites"
+        [(ngModel)]="selectedSite"
+        optionLabel="nom"
+        [filter]="true"
+        filterBy="nom" 
+        [showClear]="true"
+        placeholder="Selectionner un site">
+        <ng-template pTemplate="selectedItem" let-selectedOption>
+          <div class="flex align-items-center gap-2">
+            <img 
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+              [class]="'flag flag-' + selectedSite.nom.toLowerCase()"
+              style="width: 18px" />
+              <div>{{ selectedOption.nom }}</div>
+          </div>
+        </ng-template>
+        <ng-template let-site pTemplate="item">
+          <div class="flex align-items-center gap-2">
+            <img 
+              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                [class]="'flag flag-' + site.nom.toLowerCase()"
+                style="width: 18px" />
+                <div>{{ site.nom }}</div>
+          </div>
+        </ng-template>
+      </p-dropdown>
       </div>
     </div>
   </nav>
