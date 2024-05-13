@@ -11,7 +11,7 @@ import { Input } from '@angular/core';
 })
 export class TableComponent  {
 
-  @Input() gruData: any; // Déclaration de la propriété gruData avec l'annotation @Input
+  @Input() gruData: any; 
   url: string = '../../assets/fakedb.json'
   fakedb:any;
 

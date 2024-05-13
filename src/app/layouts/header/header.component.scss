@@ -36,7 +36,7 @@ $color-darkgrey: #545454;
     z-index:1;
 }
 .logo{
-    margin:auto;
+    width: 200px;
 }
 
 .pi{
@@ -57,6 +57,20 @@ $color-darkgrey: #545454;
 
 
 img{
-    height: 10vh;
-    width: 10vw;
+   width: 100px;
+}
+
+.btn-outline-success{
+    color:#F77503;
+    border-color: #F77503;
+    :hover{
+        color:#F77503;
+        background-color: #1F223A;
+        border-color: #F77503;  
+    }
+    :active{
+        color:#F77503;
+        background-color: #1F223A;
+        border-color: #1F223A; 
+    }
 }

@@ -5,7 +5,6 @@ $color-darkgrey: #282828;
 @import "primeicons/primeicons.css";
 *{
     display: block;
-    padding: 10px;
 
 }
 
@@ -15,31 +14,23 @@ $color-darkgrey: #282828;
     cursor: pointer;
 
 }
-.left{
-    display:flex;
-    flex-direction:column;
-    align-content: stretch;
-    margin-bottom: 10vh;
-
-}
 .main{
     display:flex;
     flex-direction: row;
     margin: auto;
     flex-wrap: wrap;        
     height: 70%;
+    padding: 30px;
     @media only screen and (max-width: 600px) {
         justify-content: center;
     }
 
 }
 .tabledash{
-    width: 90%;
+    width: 100%;
     min-width: 300px;
     height:fit-content;
     border-radius: 24px;
-    margin:10px;
-    padding: 16px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
@@ -53,56 +44,54 @@ $color-darkgrey: #282828;
     height:fit-content;
     background-color:$color-lightgrey ;
     border-radius: 24px;
-    margin:10px;
-    margin-top: 20vh;
-    padding: 16px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
-        margin-bottom: 10px;
-        margin-top: 35vh;
+
         width: 90vw;
     }
 }
 .table_right{
-    width: 100%;
     border-radius: 24px;
-    margin:10px;
-    gap: 20px;
+    width: 40vw;    
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
         width: 90vw;
     }
 }
-.table_right_2{
-    width: 100%;
-    min-width: 300px;
-    background-color:$color-lightgrey ;
+.table_left{
     border-radius: 24px;
-    margin:10px;
-    margin-top: 30vh;
-    margin-left: 40px;
-    padding: 16px; 
-    padding-top: 30px; 
-    gap: 20px;
+    width: 40vw;
+    margin-right: 30px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
         width: 90vw;
     }
+}
+.dash{
+    display:flex;
+    flex-direction: row;
+    gap: auto;
+    flex-wrap: wrap;
 }
 .graphe{
-    width: 550px;
-    min-width: 300px;
-    position:fixed;
-    right: 0;
+
     @media only screen and (max-width: 1500px) {
-        margin: 0 auto;
-        position:initial;
-        width: 90vw;
+        min-width: 400px;
     }
 }
+
 .p-button{
 background-color : #F77503;
 border:#F77503;
+}
+btn-primary{
+    width: 100%;
+}
+p-card{
+    margin: 30px;
+}
+.i{
+    margin-top: 20px;
 }

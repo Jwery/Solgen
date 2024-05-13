@@ -1,3 +1,13 @@
 p-fileUpload{
     border-radius: 30px;
 }
+.p-button{
+    color: #ffffff;
+    background: #F77503;
+    border: 1px solid #F77503;
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 6px;
+    outline-color: transparent;
+}   

@@ -1,0 +1,19 @@
+<!-- <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Commune 
+    </button>
+    <ul class="dropdown-menu">
+        <li *ngFor="let commune of this.CityList">
+            <a class="dropdown-item" href="#" >{{ commune }}</a>
+        </li>
+    </ul>   
+</div> -->
+<div class="card flex justify-content-center">
+    <p-floatLabel class="form">
+        <p-dropdown
+            [editable]="true"
+            [options]="CityList" 
+            [(ngModel)]="SelectedCity"/>
+            <label>Commune</label>
+    </p-floatLabel>
+</div>

@@ -19,9 +19,8 @@ import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AutoCompleteModule } from 'primeng/autocomplete';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InscriptionComponent } from './pages/inscription/inscription.component';
@@ -29,7 +28,18 @@ import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
 import { CookieService } from 'ngx-cookie-service';
 import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
-import {InputTextModule} from 'primeng/inputtext';
+
+
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { InputTextModule } from 'primeng/inputtext';
+import { WorksiteComponent } from './components/worksite/worksite.component';
+import { ChantierComponent } from './components/chantier/chantier.component';
+import { ResponsableComponent } from './components/responsable/responsable.component';
+import { NappeComponent } from './components/nappe/nappe.component';
+import { IntervalleComponent } from './components/intervalle/intervalle.component';
+import { DateComponent } from './components/date/date.component';
+import { CalendarModule } from 'primeng/calendar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 
 @NgModule({
@@ -45,7 +55,14 @@ import {InputTextModule} from 'primeng/inputtext';
     TableComponent,
     InscriptionComponent,
     UserviewComponent,
-    ModifyPasswordComponent
+    ModifyPasswordComponent,
+    UserviewComponent,
+    WorksiteComponent,
+    ChantierComponent,
+    ResponsableComponent,
+    NappeComponent,
+    IntervalleComponent,
+    DateComponent
   ],
   imports: [
 
@@ -62,18 +79,24 @@ import {InputTextModule} from 'primeng/inputtext';
     AutoCompleteModule,
     DropdownModule,
     BrowserModule,
-    FormsModule,
     InputNumberModule,
     DropdownModule,
     FloatLabelModule,
     DropdownModule,
-    FormsModule,
     ReactiveFormsModule,
     CardModule,
     InputIconModule,
     IconFieldModule,
-    InputTextModule
+    InputTextModule,
 
+    CardModule,
+    AutoCompleteModule,
+    FormsModule,
+    InputTextModule,
+    CalendarModule,
+    FloatLabelModule,
+    BrowserAnimationsModule
+    
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
