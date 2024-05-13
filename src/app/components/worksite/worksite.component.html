@@ -13,7 +13,8 @@
         <p-dropdown
             [editable]="true"
             [options]="CityList" 
-            [(ngModel)]="SelectedCity"/>
+            [(ngModel)]="SelectedCity"
+            (onChange)="onCityChange($event.value)"/>
             <label>Commune</label>
     </p-floatLabel>
 </div>
