@@ -40,6 +40,7 @@ import { IntervalleComponent } from './components/intervalle/intervalle.componen
 import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { Page404Component } from './pages/page404/page404.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     ResponsableComponent,
     NappeComponent,
     IntervalleComponent,
-    DateComponent
+    DateComponent,
+    Page404Component
   ],
   imports: [
 

@@ -56,10 +56,16 @@ $color-darkgrey: #545454;
 }
 
 .search{
-width:130px;
+width:140px;
 }
 
+.list{
+    text-align:left;
+}
 
+ul{
+    padding:none;
+}
 
 img{
    width: 100px;

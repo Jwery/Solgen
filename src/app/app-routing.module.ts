@@ -9,6 +9,7 @@ import { UserviewComponent } from './pages/userview/userview.component';
 import { UserService } from './services/user.service';
 import { userResolver } from './resolver/userResolver';
 import {ModifyPasswordComponent} from './pages/settings/modifyPassword/modifyPassword.component'
+import { Page404Component } from './pages/page404/page404.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'dashboard',pathMatch:'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path:'inscription', component:InscriptionComponent },
   { path:'userview', component:UserviewComponent},
   { path:'modifyPassword', component:ModifyPasswordComponent,resolve:{user:userResolver} },
+  {path:'**',component:Page404Component}
 
   
   ];
