@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SiteService } from '../../services/site.service';
 import { Site } from '../../model/Site';
+import { ConnectedOverlayScrollHandler } from 'primeng/dom';
 
 @Component({
   selector: 'app-header',
@@ -11,6 +12,7 @@ export class HeaderComponent {
 
   sites: Site[] = [];
   name:string='';
+  selectedSite! : Site;
   /**
    *
    */
@@ -19,16 +21,9 @@ export class HeaderComponent {
   }
 
   ngOnInit(): void{
-  }
-
-  search(){
-    console.log("Coucou")
-    this.site_service.getByName(this.name)
-    .subscribe({
-      next: (sites) => {
-        this.sites = sites;
-      },
-      error: (error) => console.error(error)
-    })
+    this.site_service.getSites().subscribe({
+      next:(sites) => {this.sites = sites}
+    ,
+    error: (error)=> console.error(error)})
   }
 }
