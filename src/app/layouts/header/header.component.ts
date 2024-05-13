@@ -22,6 +22,7 @@ export class HeaderComponent {
   }
 
   search(){
+    console.log("Coucou")
     this.site_service.getByName(this.name)
     .subscribe({
       next: (sites) => {
