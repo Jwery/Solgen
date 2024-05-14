@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input,Output, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CityService } from '../../services/city.service';
 import { InfochantierService } from '../../services/infochantier.service'; // Importez le service InfochantierService
@@ -12,7 +12,9 @@ export class WorksiteComponent implements OnInit {
     @Input() 
     API:any;
     CityList:string[] = [];
-    SelectedCity:string|null = null;
+    @Input()CityInput:string|null = null;
+    
+    @Output()SelectedCity:string|null =this.CityInput;
   
     constructor(private http: HttpClient, private cityService: CityService, private infoChantierService: InfochantierService) {
     }

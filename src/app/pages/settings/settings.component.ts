@@ -21,6 +21,7 @@ export class SettingsComponent {
 
   constructor(private router: Router, private userService: UserService, formBuilder: FormBuilder,route: ActivatedRoute){
     
+    if(userService.islogged()){
     this.user = route.snapshot.data['user']
     this.formGroup = formBuilder.group
     ({
@@ -32,6 +33,10 @@ export class SettingsComponent {
         // repeatPassword: [null,  [(c: any) => this.validateRepeatPassword(c)]],
       })
       this.formGroup.disable()
+    }
+    else{
+      this.router.navigate(['/connexion']);
+    }
     }
 
   onSubmit(event?: Event){

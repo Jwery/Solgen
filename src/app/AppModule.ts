@@ -18,7 +18,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
 import { TableComponent } from './components/table/table.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HttpClient, } from '@angular/common/http';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -28,6 +28,7 @@ import { UserviewComponent } from './pages/userview/userview.component';
 import { CardModule } from 'primeng/card'
 import { CookieService } from 'ngx-cookie-service';
 import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
+import { siteFormComponent } from './components/SiteForm/siteForm.component';
 
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -41,6 +42,13 @@ import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { Page404Component } from './pages/page404/page404.component';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 
 @NgModule({
@@ -64,7 +72,8 @@ import { Page404Component } from './pages/page404/page404.component';
     NappeComponent,
     IntervalleComponent,
     DateComponent,
-    Page404Component
+    Page404Component,
+    siteFormComponent
   ],
   imports: [
 
@@ -90,19 +99,22 @@ import { Page404Component } from './pages/page404/page404.component';
     InputIconModule,
     IconFieldModule,
     InputTextModule,
-
     CardModule,
     AutoCompleteModule,
     FormsModule,
     InputTextModule,
     CalendarModule,
     FloatLabelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TranslateModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'fr'
+  }),
     
   ],
+  exports:[TranslateModule,],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  
 }

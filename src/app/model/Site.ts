@@ -2,6 +2,6 @@ export interface Site{
     id:number,
     ville:string,
     carte:number,
-    rue :string,
+    rue:string,
     nom:string
 }

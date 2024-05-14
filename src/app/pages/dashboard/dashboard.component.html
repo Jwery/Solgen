@@ -6,12 +6,8 @@
         <div class="dash">
         
                 <div class="table_left">  
-                    <h3 class="title" id="editableTitle" contenteditable="true" onblur="checkTitle()">Double cliquez pour modifier le nom du projet</h3>   
                         <p-card>
-                            <h4>Informations du chantier</h4>
-                            <app-worksite class="i"></app-worksite>
-                            <app-chantier class="i"></app-chantier>
-                            <app-responsable class="i"></app-responsable>
+                            <app-siteForm [site]="site"></app-siteForm>
                         </p-card>
                         <p-card>
                             <h4>Données du chantier</h4>
