@@ -6,16 +6,10 @@
         <div class="dash">
         
                 <div class="table_left">  
-                        <p-card>
-                            <app-siteForm [site]="site"></app-siteForm>
-                        </p-card>
-                        <p-card>
-                            <h4>Données du chantier</h4>
-                            <app-nappe class="i"></app-nappe>
-                            <app-intervalle class="i"></app-intervalle>
-                            <app-date class="i"></app-date>
-                        </p-card>
-                        <p-card class="graphe">
+                    <!-- <h3 class="title" id="editableTitle" contenteditable="true" onblur="checkTitle()">Double cliquez pour modifier le nom du projet</h3>    -->
+                        <app-infochantier>  </app-infochantier>
+                        <app-datachantier></app-datachantier>
+                                                <p-card class="graphe">
                             <GraphicComponent class="graphmodule"></GraphicComponent>
                             <br>
                             <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Télécharger</button>

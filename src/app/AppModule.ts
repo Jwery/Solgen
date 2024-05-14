@@ -33,12 +33,6 @@ import { siteFormComponent } from './components/SiteForm/siteForm.component';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
-import { WorksiteComponent } from './components/worksite/worksite.component';
-import { ChantierComponent } from './components/chantier/chantier.component';
-import { ResponsableComponent } from './components/responsable/responsable.component';
-import { NappeComponent } from './components/nappe/nappe.component';
-import { IntervalleComponent } from './components/intervalle/intervalle.component';
-import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { Page404Component } from './pages/page404/page404.component';
@@ -49,6 +43,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+import { InfochantierComponent } from './components/infochantier/infochantier.component';
+import { DatachantierComponent } from './components/datachantier/datachantier.component';
 
 
 @NgModule({
@@ -66,12 +62,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     UserviewComponent,
     ModifyPasswordComponent,
     UserviewComponent,
-    WorksiteComponent,
-    ChantierComponent,
-    ResponsableComponent,
-    NappeComponent,
-    IntervalleComponent,
-    DateComponent,
+    InfochantierComponent,
+    DatachantierComponent,
     Page404Component,
     siteFormComponent
   ],
