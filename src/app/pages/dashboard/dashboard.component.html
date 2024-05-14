@@ -6,43 +6,34 @@
         <div class="dash">
         
                 <div class="table_left">  
-                    <h3 class="title" id="editableTitle" contenteditable="true" onblur="checkTitle()">Double cliquez pour modifier le nom du projet</h3>       
-                    <p-card class="tabledash" header="Importation de données">
-                        <DragdropComponent class="i"></DragdropComponent>
-                    </p-card>
-                    <p-card class="tabledash" header="Tableau">
-                        <TableComponent class="i"></TableComponent>   
-                    </p-card>
-                </div> 
-                <script src="script.ts"></script>
-
-                <div class="table_right">
-                    <p-card>
-                        <h4>Informations du chantier</h4>
-                        <app-worksite class="i"></app-worksite>
-                        <app-chantier class="i"></app-chantier>
-                        <app-responsable class="i"></app-responsable>
-                    </p-card>
-                    <p-card>
-                        <h4>Données du chantier</h4>
-                        <app-nappe class="i"></app-nappe>
-                        <app-intervalle class="i"></app-intervalle>
-                        <app-date class="i"></app-date>
-
-                    </p-card>
-                    <p-card class="graphe">
-                        <GraphicComponent class="graphmodule"></GraphicComponent>
-                </p-card>
-                <p-card class="actionButtons">
-                    <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Télécharger</button>
-                </p-card>
+                    <h3 class="title" id="editableTitle" contenteditable="true" onblur="checkTitle()">Double cliquez pour modifier le nom du projet</h3>   
+                        <p-card>
+                            <h4>Informations du chantier</h4>
+                            <app-worksite class="i"></app-worksite>
+                            <app-chantier class="i"></app-chantier>
+                            <app-responsable class="i"></app-responsable>
+                        </p-card>
+                        <p-card>
+                            <h4>Données du chantier</h4>
+                            <app-nappe class="i"></app-nappe>
+                            <app-intervalle class="i"></app-intervalle>
+                            <app-date class="i"></app-date>
+                        </p-card>
+                        <p-card class="graphe">
+                            <GraphicComponent class="graphmodule"></GraphicComponent>
+                            <br>
+                            <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Télécharger</button>
+                        </p-card>
                 </div>
-            
-            
-            
+                <div class="table_right">
+                        <!-- drag&drop -->
+                        <p-card class="tabledash" header="Importation de données">
+                            <DragdropComponent class="i"></DragdropComponent>
+                        </p-card>
+                        <p-card class="tabledash" header="Tableau">
+                            <TableComponent class="i"></TableComponent>   
+                        </p-card>   
+                </div> 
+            </div>
         </div>
-    </div>
-    
-    
-
 <app-footer></app-footer>

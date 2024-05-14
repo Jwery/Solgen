@@ -25,7 +25,6 @@ export class CityService {
     ]).pipe(
       map(([r1, r2, r3]) => {
         return [...r1.results, ...r2.results, ...r3.results].map((results: AppCity) => {
-          console.log("result.nom / city-service => ", results.nom);
           return results.nom;
         }).sort();
       })
