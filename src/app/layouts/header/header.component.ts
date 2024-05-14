@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SiteService } from '../../services/site.service';
 import { Site } from '../../model/Site';
 import { ConnectedOverlayScrollHandler } from 'primeng/dom';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent {
   /**
    *
    */
-  constructor(private site_service: SiteService) {
+  constructor(private site_service: SiteService,private router: Router) {
     
   }
 
@@ -25,5 +26,9 @@ export class HeaderComponent {
       next:(sites) => {this.sites = sites}
     ,
     error: (error)=> console.error(error)})
+  }
+
+  Select(){
+    this.router.navigate(['/dashboard'])
   }
 }

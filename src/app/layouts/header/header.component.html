@@ -22,6 +22,7 @@
         optionLabel="nom"
         [filter]="true"
         filterBy="nom" 
+        (onChange)="Select()"
         [showClear]="true"
         placeholder="Selectionner un site">
         <ng-template pTemplate="selectedItem" let-selectedOption>
