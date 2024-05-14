@@ -7,22 +7,9 @@
         
                 <div class="table_left">  
                     <!-- <h3 class="title" id="editableTitle" contenteditable="true" onblur="checkTitle()">Double cliquez pour modifier le nom du projet</h3>    -->
-                        <p-card>
-                            <h4>Informations du chantier</h4>
-                            <app-worksite class="i"></app-worksite>
-                            <app-chantier class="i"></app-chantier>
-                            <br>
-                            <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Enregistrer</button>
-                        </p-card>
-                        <p-card>
-                            <h4>Données du chantier</h4>
-                            <app-nappe class="i"></app-nappe>
-                            <app-intervalle class="i"></app-intervalle>
-                            <app-date class="i"></app-date>
-                            <br>
-                            <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Enregistrer</button>
-                        </p-card>
-                        <p-card class="graphe">
+                        <app-infochantier>  </app-infochantier>
+                        <app-datachantier></app-datachantier>
+                                                <p-card class="graphe">
                             <GraphicComponent class="graphmodule"></GraphicComponent>
                             <br>
                             <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Télécharger</button>

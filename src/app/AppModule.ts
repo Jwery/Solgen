@@ -32,14 +32,10 @@ import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyP
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
-import { WorksiteComponent } from './components/worksite/worksite.component';
-import { ChantierComponent } from './components/chantier/chantier.component';
-import { NappeComponent } from './components/nappe/nappe.component';
-import { IntervalleComponent } from './components/intervalle/intervalle.component';
-import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { NomComponent } from './components/nom/nom.component';
+import { InfochantierComponent } from './components/infochantier/infochantier.component';
+import { DatachantierComponent } from './components/datachantier/datachantier.component';
 
 
 @NgModule({
@@ -57,12 +53,9 @@ import { NomComponent } from './components/nom/nom.component';
     UserviewComponent,
     ModifyPasswordComponent,
     UserviewComponent,
-    WorksiteComponent,
-    ChantierComponent,
-    NappeComponent,
-    IntervalleComponent,
-    DateComponent,
-    NomComponent
+    InfochantierComponent,
+    DatachantierComponent,
+  
   ],
   imports: [
 
