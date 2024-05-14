@@ -1,5 +1,5 @@
 
-<div class="card flex justify-content-center">
+<p-card class="tabledash" header="Importation de données">
     <p-toast></p-toast>
     <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept=".gru" [maxFileSize]="1000000">
         <ng-template pTemplate="content">
@@ -8,4 +8,4 @@
             </ul>
         </ng-template>
     </p-fileUpload>
-</div>
+<p-card>
