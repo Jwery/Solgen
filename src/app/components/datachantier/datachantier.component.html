@@ -1,14 +1,17 @@
 <p-card>
     <!-- Nappe -->
+    <div class="nappe">
     <p-inputNumber 
     [(ngModel)]="value" 
     type="decimal"
     placeholder="Nappe"
     inputId="mètres"
     [minFractionDigits]="2"
-    suffix=" m" /> 
-
+    suffix=" m" />
+</div>
+<br>
     <!-- Intervalle -->
+    <div class="intervalle">
     <p-inputNumber 
     [(ngModel)]="value2" 
     mode="decimal" 
@@ -24,14 +27,16 @@
     
     <p-button label="0.20" [rounded]="true" severity="primary" (click)="updateValue(valueDefault2)"></p-button>
 
+    </div>
+    
+    <br>
     <!-- date -->
-    <div class="card flex justify-content-center">
+
         <p-floatLabel>
             <p-calendar 
                 [(ngModel)]="date" 
                 inputId="birth_date" />
             <label for="birth_date">Date de l'étude</label>
         </p-floatLabel>
-    </div>
 
 </p-card>
