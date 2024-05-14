@@ -34,12 +34,12 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { InputTextModule } from 'primeng/inputtext';
 import { WorksiteComponent } from './components/worksite/worksite.component';
 import { ChantierComponent } from './components/chantier/chantier.component';
-import { ResponsableComponent } from './components/responsable/responsable.component';
 import { NappeComponent } from './components/nappe/nappe.component';
 import { IntervalleComponent } from './components/intervalle/intervalle.component';
 import { DateComponent } from './components/date/date.component';
 import { CalendarModule } from 'primeng/calendar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NomComponent } from './components/nom/nom.component';
 
 
 @NgModule({
@@ -59,10 +59,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     UserviewComponent,
     WorksiteComponent,
     ChantierComponent,
-    ResponsableComponent,
     NappeComponent,
     IntervalleComponent,
-    DateComponent
+    DateComponent,
+    NomComponent
   ],
   imports: [
 
