@@ -31,10 +31,7 @@ export class HeaderComponent {
   }
 
   Select(){
-    console.log(this.selectedSite)
     this.cookieService.set("id",this.selectedSite.id.toString())
-    this.router.navigate(['/dashboard']).then(() => {
-      window.location.reload();
-    });
+    this.router.navigate(['/dashboard'])
   }
 }

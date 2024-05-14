@@ -23,6 +23,7 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router, private userservice: UserService,route: ActivatedRoute,private siteService:SiteService){
     if (route.snapshot.data['site']!=null){
       this.site=route.snapshot.data['site']
+      console.log(this.site)
     } 
   }
   
@@ -40,9 +41,6 @@ export class DashboardComponent implements OnInit {
   else{
     this.router.navigate(['/connexion']);
   }
-    this.ville=this.site?.ville||null
-    this.nom=this.nom
 }
 
 }
- 
