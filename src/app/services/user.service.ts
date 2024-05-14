@@ -5,7 +5,6 @@ import { Observable, firstValueFrom, tap } from 'rxjs';
 import { AppUser } from '../model/user';
 import { LoginForm } from '../model/loginForm';
 import { FullUser } from '../model/fullUser';
-import { HttpHeaders } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
@@ -47,7 +46,6 @@ export class UserService {
   
   update(User:FullUser){
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
-    console.log(User.id)
     let UserModified:AppUser={
       firstName:User.firstName,
       lastName:User.lastName,
@@ -62,7 +60,12 @@ export class UserService {
 
   getLoggedUser(){
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
+    console.log(this.baseApiUrl + 'AppUser/GetLoginUser')
     return firstValueFrom(this.http.get<FullUser>(this.baseApiUrl + 'AppUser/GetLoginUser',{headers}))
+  }
+
+  islogged(){
+    return !(this.cookieService.get('token')=='')
   }
 
 }

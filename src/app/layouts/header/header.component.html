@@ -22,24 +22,17 @@
         optionLabel="nom"
         [filter]="true"
         filterBy="nom" 
+        (onChange)="Select()"
         [showClear]="true"
         placeholder="Selectionner un site">
         <ng-template pTemplate="selectedItem" let-selectedOption>
-          <div class="flex align-items-center gap-2">
-            <img 
-              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-              [class]="'flag flag-' + selectedSite.nom.toLowerCase()"
-              style="width: 18px" />
+          <div  class="search">
               <div>{{ selectedOption.nom }}</div>
           </div>
         </ng-template>
         <ng-template let-site pTemplate="item">
-          <div class="flex align-items-center gap-2">
-            <img 
-              src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
-                [class]="'flag flag-' + site.nom.toLowerCase()"
-                style="width: 18px" />
-                <div>{{ site.nom }}</div>
+          <div class="list">
+              <div>{{site.nom }}</div>
           </div>
         </ng-template>
       </p-dropdown>

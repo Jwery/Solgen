@@ -1,0 +1,25 @@
+.titre{
+    align-self: center;
+    align-content: center;
+}
+
+.main{
+    display: flex;
+    width: 100vw;
+    height: 85vh;
+    background-color:#1F223A;
+    align-content: center;
+    justify-items: center;
+    @media only screen and (max-width: 600px){
+        padding:0;
+
+    }
+}
+
+iframe{
+    justify-self: center;
+    width:50vw;
+    height: 30vw;
+    margin: auto;
+
+}

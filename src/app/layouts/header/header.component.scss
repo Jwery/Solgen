@@ -36,7 +36,7 @@ $color-darkgrey: #545454;
     z-index:1;
 }
 .logo{
-    width: 200px;
+    width: 140px;
 }
 
 .pi{
@@ -55,6 +55,17 @@ $color-darkgrey: #545454;
     padding: 20px;
 }
 
+.search{
+width:140px;
+}
+
+.list{
+    text-align:left;
+}
+
+ul{
+    padding:none;
+}
 
 img{
    width: 100px;

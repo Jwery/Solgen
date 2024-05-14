@@ -1,0 +1,21 @@
+<h4>Informations du chantier</h4>
+<div class="main">
+    <div class="form">
+        <form [formGroup]="formGroup" data-dashlane-rid="c5f7437203c5b13e" data-form-type="other" (ngSubmit)="onSubmit()">
+    
+            <div class="mb-3">
+                <app-worksite id="ville" type='ville' class="form-control" formControlName="ville"></app-worksite>
+            </div>
+    
+            <div class="mb-3">
+                <label   class="form-label">Numéro de dossier</label>
+                <input id="name" type="name" class="form-control" formControlName="nom">
+            </div>
+
+            <button [disabled]="formGroup.invalid" type="submit" class="btn btn-primary">Enregistrer</button>
+            
+            
+        </form>
+
+    </div>
+</div>
