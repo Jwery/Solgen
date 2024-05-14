@@ -23,6 +23,7 @@ $color-darkgrey: #282828;
     background-color:#1F223A; 
     height: 70%;
     padding: 30px;
+    padding-bottom: 100px;
     @media only screen and (max-width: 600px) {
         justify-content: center;
     }
@@ -96,5 +97,5 @@ btn-primary{
 
 button{
     background-color : #F77503;
-border:#F77503;
+    border:#F77503;
 }

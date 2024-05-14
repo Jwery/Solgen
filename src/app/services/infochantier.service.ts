@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Site } from '../model/Site';
 import { CookieService } from 'ngx-cookie-service';
-import { Site } from '../model/Site'
-import { SiteService } from './site.service';
-import { CityService } from './city.service';
-import { isEmpty } from 'rxjs';
-
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InfochantierService {
 
-  constructor(private http: HttpClient, private cookieservice: CookieService ) {
-    
-  }
+  baseApiUrl : string = environment.apiUrl;
 
-  // Méthode pour envoyer Les infos à l'API
+  constructor(private http: HttpClient, private cookieservice: CookieService) { }
+
   addSite(site: Site) {
-    const headers = { 'Authorization': 'Bearer  '+ this.cookieservice.get('token') }
-    return this.http.post('/api/Sites', site,{ headers });
+    const headers = { 'Authorization': 'Bearer ' + this.cookieservice.get('token') };
+    return this.http.post<Site>(this.baseApiUrl+'Sites', site, { headers });
   }
 }

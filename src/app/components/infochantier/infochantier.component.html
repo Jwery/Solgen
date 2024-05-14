@@ -1,7 +1,7 @@
-<p-card>
+<p-card class="i">
     <h4>Informations du chantier</h4>
     <div class="card flex justify-content-center">
-        <input placeholder="Nom du chantier" type="text" pInputText />
+        <input placeholder="Nom du chantier" type="text" [ngModel]='nom' pInputText />
     </div>
         <p-floatLabel class="form">
             <p-dropdown
@@ -12,5 +12,5 @@
                 <label>Commune</label>
         </p-floatLabel>
     <br>
-    <button type="submit" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Enregistrer</button>
+    <button (click)="onClick()" class="btn btn-primary" data-dashlane-rid="933b89cfb69625c1" data-form-type="action" data-dashlane-label="true">Enregistrer</button>
 </p-card>
