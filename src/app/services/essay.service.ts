@@ -34,5 +34,10 @@ import { Essay } from '../model/Essay';
     return this.http.get<Essay[]>(this.baseApiUrl+'Essay/GetBySite/'+ id,{headers})
   }
 
+  addEssay(essay: Essay) {
+    const headers = { 'Authorization': 'bearer ' + this.cookieService.get('token')};
+    return this.http.post<Essay>(this.baseApiUrl+'Essay', essay, {headers});
+  }
+
   }
   

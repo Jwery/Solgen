@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Essay } from '../../model/Essay'
+import { ActivatedRoute } from '@angular/router';
+import { EssayService } from '../../services/essay.service';
+import { SiteService } from '../../services/site.service';
 
 @Component({
   selector: 'app-datachantier',
@@ -7,25 +12,44 @@ import { Component } from '@angular/core';
 })
 
 
-export class DatachantierComponent {
+export class DatachantierComponent{
 
 
-  //Begin Nappe class
-  value: number|null = null;
+  // Begin Nappe class
+  value: number = 0;
 
-
-  //begin Intervalle
+  // Begin Intervalle
   value1: number = 20;
-  value2: number|null = null;
+  value2: number = 0;
   value3: number = 25;
   valueDefault1: number = 0.25;
   valueDefault2: number = 0.20;
-date: any;
+  date: Date= new Date(2024); // Specify type
+
   updateValue(defaultValue: number) {
     this.value2 = defaultValue;
+  }
 
+  constructor(private http: HttpClient, private site: SiteService, private essayService: EssayService, route: ActivatedRoute) {}
 
-  //begin date
-  date: Date 
+  onClick() {
+    const essay: Essay = {
+      id: 0,
+      nappe: this.value,
+      interv: this.value2,
+      date : this.date.toString(),
+      num : 1,
+      siteId : 1
+    };
+
+    this.essayService.addEssay(essay)
+      .subscribe({
+        next: () => {
+          console.log('Données ajoutées avec succès à la base de données.');
+        },
+        error: (err) => {
+          console.error('Erreur lors de l\'ajout des données : ', err);
+        }
+      });
   }
 }

@@ -1,7 +1,8 @@
 export interface Essay{
     id:number,
-    Nappe:number,
-    Interv:number,
-    Num :number,
+    nappe:number,
+    interv:number,
+    date:string,
+    num: 1,
     siteId:number
 }
