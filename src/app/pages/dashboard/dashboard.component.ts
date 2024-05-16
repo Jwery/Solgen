@@ -38,9 +38,6 @@ export class DashboardComponent implements OnInit {
       error: (error) => console.error(error)
     })
   }
-  else{
-    this.router.navigate(['/connexion']);
-  }
 }
 
 }

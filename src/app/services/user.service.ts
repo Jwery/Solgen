@@ -41,7 +41,7 @@ export class UserService {
   }
 
   logOut(){
-    this.cookieService.set('token','')
+    this.cookieService.delete('token')
   }
   
   update(User:FullUser){
@@ -65,7 +65,7 @@ export class UserService {
   }
 
   islogged(){
-    return !(this.cookieService.get('token')=='')
+    return (this.cookieService.check('token'))
   }
 
 }

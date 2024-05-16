@@ -29,6 +29,7 @@ import { CardModule } from 'primeng/card'
 import { CookieService } from 'ngx-cookie-service';
 import { ModifyPasswordComponent } from './pages/settings/modifyPassword/modifyPassword.component';
 import { siteFormComponent } from './components/SiteForm/siteForm.component';
+import { LoggedGuard } from './your-guard.guard';
 
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -65,7 +66,7 @@ import { DatachantierComponent } from './components/datachantier/datachantier.co
     InfochantierComponent,
     DatachantierComponent,
     Page404Component,
-    siteFormComponent
+    siteFormComponent,
   ],
   imports: [
 

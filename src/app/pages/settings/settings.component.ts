@@ -34,9 +34,6 @@ export class SettingsComponent {
       })
       this.formGroup.disable()
     }
-    else{
-      this.router.navigate(['/connexion']);
-    }
     }
 
   onSubmit(event?: Event){
