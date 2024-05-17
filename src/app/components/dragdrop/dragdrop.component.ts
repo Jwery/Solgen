@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DragdropService } from '../../services/dragdrop.service';
 import { HttpClient } from '@angular/common/http';
-import { Essay } from '../../model/Essay';
-
 
 interface UploadEvent {
   originalEvent: Event;
@@ -18,7 +16,6 @@ interface UploadEvent {
 export class DragdropComponent {
 
   gruData: any;
-
   uploadedFiles: any[] = [];
 
   constructor(private messageService: MessageService, private dragdropService: DragdropService) {}
@@ -32,15 +29,18 @@ export class DragdropComponent {
           return;
         }
 
-        // Appel du service pour récupérer les données du fichier
-        this.dragdropService.GetEssayFromFile(file.name).subscribe(
+        const formData = new FormData();
+        formData.append('file', file);
+
+        this.dragdropService.uploadFile(formData).subscribe(
           (data) => {
             this.gruData = data;
-            this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: ''});
+            this.uploadedFiles.push(file);
+            this.messageService.add({severity: 'info', summary: 'File Uploaded', detail: file.name + ' uploadé avec succès.'});
           },
           (error) => {
-            console.error('Erreur lors de la récupération des données du fichier :', error);
-            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Erreur lors de la récupération des données du fichier.'});
+            console.error('Erreur lors de l\'upload du fichier :', error);
+            this.messageService.add({severity: 'error', summary: 'Error', detail: 'Erreur lors de l\'upload du fichier.'});
           }
         );
       }
@@ -49,20 +49,10 @@ export class DragdropComponent {
 
   isValidFileExtension(file: File): boolean {
     const allowedExtensions = ['GRU'];
-    const extension = file.name.split('.').pop()?.toUpperCase(); // Obtient l'extension du fichier et convertit en majuscules
+    const extension = file.name.split('.').pop()?.toUpperCase();
     if (extension) {
       return allowedExtensions.includes(extension);
     }
-    return false; // Retourne faux si l'extension n'est pas définie
-  }
-  onUpload(){
-    const values: Essay = {
-      "prof": 0,
-      "rp": 0,
-      "rt": 0
-    };
-
-    this.dragdropService.GetEssayFromFile(values)
-      .subscrib
+    return false;
   }
 }
