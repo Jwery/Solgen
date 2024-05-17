@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DragdropService } from '../../services/dragdrop.service';
+import { HttpClient } from '@angular/common/http';
+import { Essay } from '../../model/Essay';
+
 
 interface UploadEvent {
   originalEvent: Event;
@@ -51,5 +54,15 @@ export class DragdropComponent {
       return allowedExtensions.includes(extension);
     }
     return false; // Retourne faux si l'extension n'est pas définie
+  }
+  onUpload(){
+    const values: Essay = {
+      "prof": 0,
+      "rp": 0,
+      "rt": 0
+    };
+
+    this.dragdropService.GetEssayFromFile(values)
+      .subscrib
   }
 }
