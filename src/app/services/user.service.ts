@@ -43,7 +43,7 @@ export class UserService {
   logOut(){
     this.cookieService.delete('token')
   }
-  
+   
   update(User:FullUser){
     const headers = { 'Authorization': 'Bearer  '+ this.cookieService.get('token') }
     let UserModified:AppUser={

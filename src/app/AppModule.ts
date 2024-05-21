@@ -46,6 +46,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 import { InfochantierComponent } from './components/infochantier/infochantier.component';
 import { DatachantierComponent } from './components/datachantier/datachantier.component';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -106,7 +107,7 @@ import { DatachantierComponent } from './components/datachantier/datachantier.co
     
   ],
   exports:[TranslateModule,],
-  providers: [CookieService],
+  providers: [CookieService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -15,15 +15,14 @@ export class DashboardComponent implements OnInit {
 
   users: AppUser[] = [];
 
-  site:Site|null=null
+  siteId:number=0
   id:string|null=null
   ville:string|null=null
   nom:string|null=null
 
   constructor(private router: Router, private userservice: UserService,route: ActivatedRoute,private siteService:SiteService){
     if (route.snapshot.data['site']!=null){
-      this.site=route.snapshot.data['site']
-      console.log(this.site)
+      this.siteId=route.snapshot.data['site'].id
     } 
   }
   

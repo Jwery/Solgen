@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router'
 import { AppUser } from '../../model/user'
+import { MessageService } from 'primeng/api';
  
 @Component({
   selector: 'app-connexion',
@@ -13,7 +14,7 @@ export class ConnexionComponent {
 
   formGroup!: FormGroup
   LitUsers:Signal<AppUser[]>;
-  constructor(private router: Router, private userService: UserService, formBuilder: FormBuilder){
+  constructor(private router: Router, private userService: UserService, formBuilder: FormBuilder,private messageService:MessageService){
 
     this.LitUsers = userService.getall();
     this.formGroup = formBuilder.group
@@ -29,9 +30,7 @@ export class ConnexionComponent {
       next: () => {
         this.router.navigate(['/dashboard']);
       }, error: err => {
-      console.error(err);
+        this.messageService.add({severity: 'error', summary: 'Error', detail: 'L\'adresse mail et/ou le mot de passe est erroné'});
       }});
   }
- 
 }
- 

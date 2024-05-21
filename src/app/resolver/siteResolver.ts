@@ -9,8 +9,9 @@ import { isEmpty } from 'rxjs';
 export const siteResolver: ResolveFn<Site|null> = (route, state) => {
   const siteService = inject(SiteService);
   const cookieService = inject(CookieService);
-  if(cookieService.get("id")=="0" || cookieService.get("id")==""){
+  if(!cookieService.check("id")){
     return null
   }
+  console.log("coucou")
   return siteService.getCurrentSite();
 };

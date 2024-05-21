@@ -23,7 +23,7 @@ export class HeaderComponent {
   }
 
   ngOnInit(): void{
-    this.cookieService.set("id","0")
+    // this.cookieService.delete("id")
     this.site_service.getSites().subscribe({
       next:(sites) => {this.sites = sites}
     ,
@@ -31,7 +31,10 @@ export class HeaderComponent {
   }
 
   Select(){
+    
     this.cookieService.set("id",this.selectedSite.id.toString())
+    
     this.router.navigate(['/dashboard'])
+
   }
 }

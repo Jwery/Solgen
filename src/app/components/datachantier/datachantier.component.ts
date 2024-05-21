@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-datachantier',
@@ -21,11 +22,10 @@ export class DatachantierComponent {
   valueDefault1: number = 0.25;
   valueDefault2: number = 0.20;
 date: any;
+
   updateValue(defaultValue: number) {
     this.value2 = defaultValue;
-
-
-  //begin date
-  date: Date 
+    //begin date
+    date: Date 
   }
 }

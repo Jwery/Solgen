@@ -16,22 +16,29 @@ export class InfochantierComponent implements OnInit,OnChanges {
   CityList:string[] = [];
   nom:string|null=null
   SelectedCity:string|null =null;
+  site:Site|null=null
 
   @Input()
-  site:Site|null = null;
+  siteId:number=0;
 
 
   constructor(private http: HttpClient, private siteService: SiteService, private infoChantierService: InfochantierService, private cityService: CityService) { 
-    console.log(this.site?.nom)
-    this.nom=this.site?.nom||null;
-    this.SelectedCity=this.site?.ville||null
-  }
+    if(this.siteId!=0){
+      siteService.getById(this.siteId.toString())  .then((value) => {
+        this.site=value;
+      })
+      
+    }
+    else{
 
-  ngOnChanges(changes: SimpleChanges): void {
-    if (!changes['site'].firstChange) {
-      console.log(changes['site'].currentValue);
     }
   }
+
+   ngOnChanges(changes: SimpleChanges): void {
+    if (!changes['site'].firstChange) {
+       console.log(changes['site'].currentValue);
+     }
+   }
 
   onClick(site: Site) {
     this.infoChantierService.addSite(site)
@@ -45,8 +52,15 @@ export class InfochantierComponent implements OnInit,OnChanges {
     });
   }
 
-  ngOnInit() {
-    this.getList()
+  async ngOnInit() {
+    if(this.siteId!=0){
+      this.site = await this.siteService.getById(this.siteId.toString())
+      console.log(this.site?.id)
+      console.log(this.siteId)
+      this.nom=this.site?.nom||null;
+      this.SelectedCity=this.site?.ville||null
+    }
+      this.getList()
   }
 
   getList(){

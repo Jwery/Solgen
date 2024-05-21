@@ -12,6 +12,7 @@ import { Page404Component } from './pages/page404/page404.component';
 import { siteResolver } from './resolver/siteResolver';
 import { LoggedGuard } from './your-guard.guard';
 import { CookieService } from 'ngx-cookie-service';
+import { MessageService } from 'primeng/api';
 
 const routes: Routes = [
   { path:'', redirectTo:'dashboard',pathMatch:'full' },
@@ -27,7 +28,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [CookieService]
+  providers: [CookieService,MessageService]
 })
 
 export class AppRoutingModule { }
