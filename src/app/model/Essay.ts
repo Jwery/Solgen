@@ -3,6 +3,6 @@ export interface Essay{
     nappe:number,
     interv:number,
     date:string,
-    num: 1,
+    num: number,
     siteId:number
 }

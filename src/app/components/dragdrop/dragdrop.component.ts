@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DragdropService } from '../../services/dragdrop.service';
 import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 interface UploadEvent {
   originalEvent: Event;
@@ -17,8 +18,14 @@ export class DragdropComponent {
 
   gruData: any;
   uploadedFiles: any[] = [];
+  productForm: FormGroup;
+  @Input() essayId:number=0
 
-  constructor(private messageService: MessageService, private dragdropService: DragdropService) {}
+  constructor(private messageService: MessageService, private dragdropService: DragdropService, private formBuilder: FormBuilder) {
+    this.productForm = this.formBuilder.group({
+      File: [null],
+  })
+  }
 
   onUpload(event: any) {
     if (event.files && event.files.length > 0) {
@@ -31,8 +38,9 @@ export class DragdropComponent {
 
         const formData = new FormData();
         formData.append('file', file);
+        this.productForm.controls['File'].setValue(event.target.files[0]);
 
-        this.dragdropService.uploadFile(formData).subscribe(
+        this.dragdropService.uploadFile(this.productForm,this.essayId).subscribe(
           (data) => {
             this.gruData = data;
             this.uploadedFiles.push(file);

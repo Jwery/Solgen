@@ -39,5 +39,6 @@ import { Essay } from '../model/Essay';
     return this.http.post<Essay>(this.baseApiUrl+'Essay', essay, {headers});
   }
 
+
   }
   

@@ -4,6 +4,7 @@ import { Site } from '../../model/Site';
 import { UserService } from '../../services/user.service';
 import { SiteService } from '../../services/site.service';
 import { ActivatedRoute, Router } from '@angular/router'
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -20,12 +21,12 @@ export class DashboardComponent implements OnInit {
   ville:string|null=null
   nom:string|null=null
 
-  constructor(private router: Router, private userservice: UserService,route: ActivatedRoute,private siteService:SiteService){
+  constructor(private router: Router, private userservice: UserService,route: ActivatedRoute,private siteService:SiteService, private formBuilder:FormBuilder){
     if (route.snapshot.data['site']!=null){
       this.site=route.snapshot.data['site']
     } 
+    
   }
-  
 
   ngOnInit(): void{
     if(this.userservice.islogged()){

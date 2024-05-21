@@ -40,7 +40,6 @@ import { Page404Component } from './pages/page404/page404.component';
 
 
 import { InfochantierComponent } from './components/infochantier/infochantier.component';
-import { DatachantierComponent } from './components/datachantier/datachantier.component';
 
 
 @NgModule({
@@ -59,7 +58,6 @@ import { DatachantierComponent } from './components/datachantier/datachantier.co
     ModifyPasswordComponent,
     UserviewComponent,
     InfochantierComponent,
-    DatachantierComponent,
     Page404Component,
     siteFormComponent
   ],
