@@ -91,7 +91,7 @@ import { InfochantierComponent } from './components/infochantier/infochantier.co
     InputTextModule,
     CalendarModule,
     FloatLabelModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
  
     
   ],

@@ -5,12 +5,14 @@ import { InfochantierService } from '../../services/infochantier.service';
 import { SiteService } from '../../services/site.service';
 import { CityService } from '../../services/city.service';
 import { EssayService } from '../../services/essay.service';
+import { MessageService } from 'primeng/api';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-infochantier',
   templateUrl: './infochantier.component.html',
-  styleUrls: ['./infochantier.component.scss'] // Notez le 's'
+  styleUrls: ['./infochantier.component.scss'],
+  providers: [MessageService],
 })
 export class InfochantierComponent implements OnInit {
   @Input() 
@@ -34,6 +36,7 @@ export class InfochantierComponent implements OnInit {
     private infoChantierService: InfochantierService,
     private route: ActivatedRoute,
     private essayService: EssayService,
+    private messageService: MessageService, 
   ) {
 
   }
@@ -72,12 +75,11 @@ export class InfochantierComponent implements OnInit {
     this.essayService.addEssay(Essay).subscribe({
       next: () => {
         console.log('Données ajoutées avec succès à la base de données.');
-        //this.messageService.add({severity: 'info', summary: 'Encoded' + ' Données ajoutées avec succès à la base de donnée'});
-
+        this.messageService.add({severity: 'info', summary: 'Encoded' + ' Données ajoutées avec succès à la base de donnée'});
       },
       error: (err) => {
         console.error('Erreur lors de l\'ajout des données : ', err);
-        //this.messageService.add({severity: 'info', summary: 'Encoded' + ' Erreur lors de l\'ajout des données'});
+        this.messageService.add({severity: 'info', summary: 'Encoded' + ' Erreur lors de l\'ajout des données'});
       }
     });
   }
