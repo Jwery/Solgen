@@ -72,10 +72,12 @@ export class InfochantierComponent implements OnInit {
     this.essayService.addEssay(Essay).subscribe({
       next: () => {
         console.log('Données ajoutées avec succès à la base de données.');
+        //this.messageService.add({severity: 'info', summary: 'Encoded' + ' Données ajoutées avec succès à la base de donnée'});
 
       },
       error: (err) => {
         console.error('Erreur lors de l\'ajout des données : ', err);
+        //this.messageService.add({severity: 'info', summary: 'Encoded' + ' Erreur lors de l\'ajout des données'});
       }
     });
   }

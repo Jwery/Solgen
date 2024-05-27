@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DragdropService } from '../../services/dragdrop.service';
 import { HttpClient } from '@angular/common/http';
