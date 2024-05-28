@@ -1,7 +1,12 @@
 
 <p-card class="tabledash" header="Importation de données">
     <p-toast></p-toast>
-    <p-fileUpload name="demo[]" url="https://www.primefaces.org/cdn/api/upload.php" (onUpload)="onUpload($event)" [multiple]="true" accept=".gru" [maxFileSize]="1000000">
+    <p-fileUpload 
+  name="file" 
+  url="./upload" 
+  (onUpload)="onUpload($event)" 
+  accept=".gru"
+  mode="advanced">
         <ng-template pTemplate="content">
             <ul *ngIf="uploadedFiles.length">
                 <li *ngFor="let file of uploadedFiles">{{ file.name }} - {{ file.size }} bytes</li>
