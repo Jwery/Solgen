@@ -9,7 +9,7 @@ import { FormGroup } from '@angular/forms';
 })
 export class DragdropService {
 
-  private apiUrl = 'http://localhost:3000/api/Essay/FromFile';  // Assurez-vous que l'URL est correcte
+  private apiUrl = '/api/Essay/FromFile';
 
   constructor(private http: HttpClient, private cookieservice: CookieService) { }
 
