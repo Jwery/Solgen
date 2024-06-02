@@ -15,12 +15,12 @@ export class DragdropService {
 
   uploadFile(fileData: FormGroup, idValue: number): Observable<any> {
     const headers = { 'Authorization': 'Bearer ' + this.cookieservice.get('token') };
-    return this.http.post(`${this.apiUrl}/UploadFile/${idValue}`, fileData.value, { headers });
+    return this.http.post(`${this.apiUrl}UploadFile/${idValue}`, fileData.value, { headers });
   }
 
   GetEssayFromFile(fileName: string): Observable<any> {
     const headers = { 'Authorization': 'Bearer ' + this.cookieservice.get('token') };
-    const url = `${this.apiUrl}/FromFile/${fileName}`;
+    const url = `${this.apiUrl}FromFile/${fileName}`;
     return this.http.get(url, { headers });
   }
 }

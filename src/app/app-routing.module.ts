@@ -10,6 +10,7 @@ import { userResolver } from './resolver/userResolver';
 import {ModifyPasswordComponent} from './pages/settings/modifyPassword/modifyPassword.component'
 import { Page404Component } from './pages/page404/page404.component';
 import { siteResolver } from './resolver/siteResolver';
+import { DataviewComponent } from './dataview/dataview.component';
 
 const routes: Routes = [
   { path:'', redirectTo:'dashboard',pathMatch:'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path:'settings', component:SettingsComponent,resolve:{user:userResolver}},
   { path:'inscription', component:InscriptionComponent },
   { path:'userview', component:UserviewComponent},
+  { path:'dataview', component:DataviewComponent},
   { path:'modifyPassword', component:ModifyPasswordComponent,resolve:{user:userResolver} },
   {path:'**',component:Page404Component}
 ];

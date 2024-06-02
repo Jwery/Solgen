@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { DragdropService } from '../../services/dragdrop.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'DragdropComponent',
@@ -15,7 +17,7 @@ export class DragdropComponent {
   productForm: FormGroup;
   @Input() essayId: number = 0;
 
-  constructor(private messageService: MessageService, private dragdropService: DragdropService, private formBuilder: FormBuilder) {
+  constructor(private messageService: MessageService, private dragdropService: DragdropService, private formBuilder: FormBuilder, private httpClient: HttpClient) {
     this.productForm = this.formBuilder.group({
       File: [null],
     });
