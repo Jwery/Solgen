@@ -6,7 +6,6 @@ import { SiteService } from '../../services/site.service';
 import { CityService } from '../../services/city.service';
 import { EssayService } from '../../services/essay.service';
 import { MessageService } from 'primeng/api';
-import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-infochantier',
@@ -21,13 +20,13 @@ export class InfochantierComponent implements OnInit {
   SelectedCity: string | null = null;
   nom: string | null = null;
   
-  value: number = 0;
+  value: number | null = null;
   value1: number = 20;
-  value2: number = 0;
+  value2: number | null = null;
   value3: number = 25;
   valueDefault1: number = 0.25;
   valueDefault2: number = 0.20;
-  date: Date = new Date(2024); // Specify type
+  date: Date = new Date(); // Set to current date
   
   constructor(
     private http: HttpClient,
@@ -37,10 +36,8 @@ export class InfochantierComponent implements OnInit {
     private route: ActivatedRoute,
     private essayService: EssayService,
     private messageService: MessageService, 
-  ) {
+  ) { }
 
-  }
-  
   ngOnInit() {
     this.getList();
   }
@@ -48,8 +45,8 @@ export class InfochantierComponent implements OnInit {
   async onClick() {
     var Essay = {
       id: 0,
-      nappe: this.value,
-      interv: this.value2,
+      nappe: this.value ?? 0, // Convert to number
+      interv: this.value2 ?? 0, // Convert to number
       date: this.date.toString(),
       num: 1,
       siteId: 0
@@ -69,17 +66,17 @@ export class InfochantierComponent implements OnInit {
     
     console.log(combinedData);
     
-    Essay.siteId =await (await this.infoChantierService.addSite(Site)).id
+    Essay.siteId = await (await this.infoChantierService.addSite(Site)).id;
     
-  console.log("l'Id du site est "+ Essay.siteId)
+    console.log("l'Id du site est " + Essay.siteId);
     this.essayService.addEssay(Essay).subscribe({
       next: () => {
         console.log('Données ajoutées avec succès à la base de données.');
-        this.messageService.add({severity: 'info', summary: 'Encoded' + ' Données ajoutées avec succès à la base de donnée'});
+        this.messageService.add({severity: 'info', summary: 'Encoded', detail: 'Données ajoutées avec succès à la base de donnée'});
       },
       error: (err) => {
         console.error('Erreur lors de l\'ajout des données : ', err);
-        this.messageService.add({severity: 'info', summary: 'Encoded' + ' Erreur lors de l\'ajout des données'});
+        this.messageService.add({severity: 'error', summary: 'Erreur', detail: 'Erreur lors de l\'ajout des données'});
       }
     });
   }
@@ -96,5 +93,4 @@ export class InfochantierComponent implements OnInit {
   updateValue(defaultValue: number) {
     this.value2 = defaultValue;
   }
-  
 }
