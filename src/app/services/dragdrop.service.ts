@@ -9,18 +9,18 @@ import { FormGroup } from '@angular/forms';
 })
 export class DragdropService {
 
-  private apiUrl = '/api/Essay/FromFile/';
+  private apiUrl: string = '/api/Essay/FromFile/';
 
-  constructor(private http: HttpClient, private cookieservice: CookieService) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
 
   uploadFile(fileData: FormGroup, idValue: number): Observable<any> {
-    const headers = { 'Authorization': 'Bearer ' + this.cookieservice.get('token') };
-    return this.http.post(`${this.apiUrl}UploadFile/${idValue}`, fileData.value, { headers });
+    const headers = { 'Authorization': 'Bearer ' + this.cookieService.get('token') };
+    return this.http.post(`${this.apiUrl}UploadFile/${idValue}`, fileData.value, { headers: headers });
   }
 
   GetEssayFromFile(fileName: string): Observable<any> {
-    const headers = { 'Authorization': 'Bearer ' + this.cookieservice.get('token') };
+    const headers = { 'Authorization': 'Bearer ' + this.cookieService.get('token') };
     const url = `${this.apiUrl}FromFile/${fileName}`;
-    return this.http.get(url, { headers });
+    return this.http.get(url, { headers: headers });
   }
 }

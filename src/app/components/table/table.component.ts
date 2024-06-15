@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Input } from '@angular/core';
 
-
-
 @Component({
   selector: 'TableComponent',
   templateUrl: './table.component.html',

@@ -30,7 +30,7 @@ export class DragdropComponent {
       for (let file of files) {
         // Vérification de l'extension du fichier
         if (!this.isValidFileExtension(file)) {
-          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Seuls les fichiers avec l\'extension .GRU sont autorisés.' });
+          this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Seuls les fichiers avec l\'extension.GRU sont autorisés.' });
           return;
         }
 
@@ -42,11 +42,12 @@ export class DragdropComponent {
           (data) => {
             this.gruData = data;
             this.uploadedFiles.push(file);
-            this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: file.name + ' uploadé avec succès.' });
+            this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: file.name + 'ploadé avec succès.' });
           },
           (error) => {
             console.error('Erreur lors de l\'upload du fichier :', error);
             this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Erreur lors de l\'upload du fichier.' });
+            
           }
         );
       }

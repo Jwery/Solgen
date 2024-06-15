@@ -55,6 +55,7 @@ $color-darkgrey: #282828;
 .table_right{
     border-radius: 24px;
     width: 30vw;    
+    min-width: 500px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
         margin-bottom: 10px;
@@ -64,6 +65,7 @@ $color-darkgrey: #282828;
 .table_left{
     border-radius: 24px;
     width: 30vw;
+    min-width: 500px;
     margin-right: 30px;
     @media only screen and (max-width: 600px) {
         margin: 0 auto;
