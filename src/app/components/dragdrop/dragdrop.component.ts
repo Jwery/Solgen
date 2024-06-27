@@ -42,6 +42,7 @@ export class DragdropComponent {
           (data) => {
             this.gruData = data;
             this.uploadedFiles.push(file);
+            console.log('Fichier ajouté avec succès.');
             this.messageService.add({ severity: 'info', summary: 'File Uploaded', detail: file.name + 'ploadé avec succès.' });
           },
           (error) => {
